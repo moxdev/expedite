@@ -1,0 +1,54 @@
+@font-face {
+	font-family: 'Roboto-Light';
+	src: url('fonts/Roboto-Light.eot?#iefix') format('embedded-opentype'), url('fonts/Roboto-Light.woff') format('woff'), url('fonts/Roboto-Light.ttf') format('truetype'), url('fonts/Roboto-Light.svg#Roboto-Light') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto-Regular';
+	src: url('fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/Roboto-Regular.woff') format('woff'), url('fonts/Roboto-Regular.ttf') format('truetype'), url('fonts/Roboto-Regular.svg#Roboto-Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto-Medium';
+	src: url('fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'), url('fonts/Roboto-Medium.woff') format('woff'), url('fonts/Roboto-Medium.ttf') format('truetype'), url('fonts/Roboto-Medium.svg#Roboto-Medium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto-MediumItalic';
+	src: url('fonts/Roboto-MediumItalic.eot?#iefix') format('embedded-opentype'), url('fonts/Roboto-MediumItalic.woff') format('woff'), url('fonts/Roboto-MediumItalic.ttf') format('truetype'), url('fonts/Roboto-MediumItalic.svg#Roboto-MediumItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto-BoldCondensed';
+	src: url('fonts/Roboto-BoldCondensed.eot?#iefix') format('embedded-opentype'), url('fonts/Roboto-BoldCondensed.woff') format('woff'), url('fonts/Roboto-BoldCondensed.ttf') format('truetype'), url('fonts/Roboto-BoldCondensed.svg#Roboto-BoldCondensed') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto-Black';
+	src: url('fonts/Roboto-Black.eot?#iefix') format('embedded-opentype'), url('fonts/Roboto-Black.woff') format('woff'), url('fonts/Roboto-Black.ttf') format('truetype'), url('fonts/Roboto-Black.svg#Roboto-Black') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$font__light: 'Roboto-Light', sans-serif;
+$font__reg: 'Roboto-Regular', sans-serif;
+$font__med:'Roboto-Medium', sans-serif;
+$font__med-italic: 'Roboto-MediumItalic', sans-serif;
+$font__bold-cond: 'Roboto-BoldCondensed', sans-serif;
+$font__black: 'Roboto-Black', sans-serif;
+
+$font__main: "Roboto-Regular", sans-serif;
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;

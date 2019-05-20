@@ -1,0 +1,134 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+@mixin test($color) {
+	border: 1px solid $color;
+}
+
+// Font Smoothing
+@mixin font-smooth {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get($columns, $numberColumns) - (($columns__margin * ($numberColumns - 1)) / $numberColumns);
+}
+
+// Media queries
+@mixin respond-to($breakpoint) {
+	// Retrieves the value from the key
+	$value: map-get($breakpoints, $breakpoint);
+
+	// If the key exists in the map
+	@if $value !=null {
+
+		// Prints a media query based on the value
+		@media screen and (min-width: $value) {
+			@content;
+		}
+	}
+
+	// If the key doesn't exist in the map
+	@else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+		+"Please make sure it is defined in `$breakpoints` map.";
+	}
+}
+
+@mixin respond-to-vert($breakpoint) {
+	// Retrieves the value from the key
+	$value: map-get($breakpoints_vert, $breakpoint);
+
+	// If the key exists in the map
+	@if $value !=null {
+
+		// Prints a media query based on the value
+		@media screen and (min-height: $value) {
+			@content;
+		}
+	}
+
+	// If the key doesn't exist in the map
+	@else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+		+"Please make sure it is defined in `$breakpoints` map.";
+	}
+}
+
+// Outside padding
+@mixin padding-left-right($padding-sm: map-get($outer_spacing, small), $padding-lg: map-get($outer_spacing, medium)) {
+	padding-left: $padding-sm + rem;
+	padding-right: $padding-sm + rem;
+
+	@include respond-to(small) {
+		padding-left: $padding-lg + rem;
+		padding-right: $padding-lg + rem;
+	}
+}
+
+// Outside padding
+@mixin padding-top-bottom($padding-sm: map-get($outer_spacing, small), $padding-lg: map-get($outer_spacing, medium)) {
+	padding-top: $padding-sm + rem;
+	padding-bottom: $padding-sm + rem;
+
+	@include respond-to(small) {
+		padding-top: $padding-lg + rem;
+		padding-bottom: $padding-lg + rem;
+	}
+}
+
+// Outside margin
+@mixin margin-left-right($margin-sm: map-get($outer_spacing, small), $margin-lg: map-get($outer_spacing, medium)) {
+	margin-left: $margin-sm + rem;
+	margin-right: $margin-sm + rem;
+
+	@include respond-to(small) {
+		margin-left: $margin-lg + rem;
+		margin-right: $margin-lg + rem;
+	}
+}
+
+/*
+  This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+  or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+@mixin object-fit($fit: fill, $position: null) {
+	-o-object-fit: $fit;
+	object-fit: $fit;
+
+	@if $position {
+		-o-object-position: $position;
+		object-position: $position;
+		font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+	}
+
+	@else {
+		font-family: 'object-fit: #{$fit}';
+	}
+}

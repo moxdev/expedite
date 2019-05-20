@@ -1,0 +1,19 @@
+$breakpoints: ('xxx-small': 23.438em, // 375px
+  'xx-small': 28.125em, // 450px
+  'x-small': 35.938em, // 575px
+  'small': 46.875em, // 750px
+  'medium': 59.375em, // 950px
+  'large': 71.875em, // 1150px
+  'x-large': 84.375em, // 1350px
+  'xx-large': 109.375em // 1750px
+);
+
+$breakpoints_vert: ('x-small': 28.125em, // 450px
+  'small': 53.125em, // 850px
+);
+
+$outer_spacing: ('small': 1.5,
+  'medium': 2.5);
+
+$max_content_width: 62.5rem; // 1000px
+$max_content_width-lg: 68.750em; // 1100px

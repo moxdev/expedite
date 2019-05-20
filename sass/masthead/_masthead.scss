@@ -1,0 +1,70 @@
+#masthead {
+	position: relative;
+
+	.aux-header {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		background: $color__brand-1;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		@include padding-left-right;
+
+		.aux-tel-svg {
+
+			@include respond-to(small) {
+				display: none;
+			}
+
+			svg {
+				display: block;
+				width: 20px;
+				height: 20px;
+			}
+		}
+
+		.aux-tel {
+			display: none;
+			color: #ffffff;
+			text-decoration: none;
+			font-family: $font__light;
+
+			@include respond-to(small) {
+				display: block;
+			}
+
+		}
+
+		.aux-divider {
+			color: #ffffff;
+			font-size: 1.5rem;
+			padding-left: .5rem;
+			padding-right: .5rem;
+			@include font-smooth;
+			line-height: 1;
+		}
+
+		#aux-menu {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+
+			a {
+				color: $color__brand-2;
+				text-decoration: none;
+				font-family: $font__black;
+			}
+		}
+	}
+
+	.custom-logo {
+		position: absolute;
+		top: 10%;
+		left: 1rem;
+		width: 8.4375rem;
+
+		@media only screen and (min-width: 23.4375rem) {
+			width: 12.5rem;
+		}
+	}
+}
