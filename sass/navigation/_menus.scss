@@ -1,29 +1,21 @@
-body.mobile-nav-active .main-navigation {
-	overflow-y: scroll;
-	opacity: 1;
-}
-
 .main-navigation {
 	position: fixed;
-	z-index: -1;
-	left: 0;
 	top: 0;
-	bottom: 0;
-	right: 0;
+	left: 0;
+	z-index: 999999;
+	background-color: $color__brand-1;
+	padding-left: 1em;
+	padding-bottom: 2em;
+	padding-top: 2em;
 	width: 100vw;
 	height: 100vh;
-	overflow-x: hidden;
-	overflow-y: hidden;
-	-webkit-overflow-scrolling: touch;
-	padding: 0 0 2rem 29vw;
-	background: $color__brand-1;
-	opacity: 0;
-	transition: opacity 0.25s;
+	box-shadow: inset 1.5em 0 1.5em -0.75em rgba(0,0,0,0.5);
+	letter-spacing: 1.5px;
+	transform: translate3d(-100%, 0, 0);
+	transition: all 300ms ease 0ms;
 
-	body.mobile-nav-active & {
-		overflow-y: scroll;
-		opacity: 1;
-		z-index: 10;
+	&.nav-open {
+		transform: translate3d(-30%, 0, 0);
 	}
 
 	> ul {
@@ -41,13 +33,14 @@ body.mobile-nav-active .main-navigation {
 	ul {
 		list-style: none;
 		margin: 0;
+		width: 300px;
+		float: right;
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
+			max-height: 0;
+			overflow: hidden;
+			box-shadow: 0 0 7px rgba(0, 0, 0, .6);
+			transition: max-height .25s;
 
 			ul {
 				left: -999em;
@@ -62,7 +55,7 @@ body.mobile-nav-active .main-navigation {
 			}
 
 			a {
-				width: 200px;
+				// width: 200px;
 			}
 
 			:hover > a,
@@ -102,6 +95,12 @@ body.mobile-nav-active .main-navigation {
 	a {
 		display: block;
 		text-decoration: none;
+		color: #fff;
+		font-family: $font__med;
+		text-transform: uppcase;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+		;
+		padding: 1rem 3.5rem 1rem 1.5rem;
 	}
 
 	.current_page_item > a,
@@ -113,6 +112,7 @@ body.mobile-nav-active .main-navigation {
 }
 
 .menu-toggle {
+	display: block;
 	padding-bottom: 2rem;
 	color: $color__brand-1;
 	position: relative;
@@ -173,20 +173,56 @@ body.mobile-nav-active .main-navigation {
 	}
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
+.arrow {
+	position: absolute;
+	right: 10px;
+	top: 13px;
+	bottom: 5px;
+	padding: 0;
+	width: 32px;
+	height: 32px;
+	background: none;
+	color: #FFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	line-height: 1;
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
+	@include respond-to('large') {
 		display: none;
 	}
-	.main-navigation ul {
+
+	&:after {
+		content: '\00bb';
 		display: block;
+		font-size: 1.5rem;
+		// transform: rotate(180deg);
+		transition: transform 0.25s, margin-top 0.25s;
+		color: #fff;
+	}
+
+	&.active:after {
+		transform: rotate(90deg);
+		// margin-top: -2px;
+		// padding-top: 5px;
 	}
 }
+
+/* Small menu. */
+// .menu-toggle,
+// .main-navigation.toggled ul {
+// 	display: block;
+// }
+
+// @media screen and (min-width: 37.5em) {
+// 	.menu-toggle {
+// 		display: none;
+// 	}
+// 	.main-navigation ul {
+// 		display: block;
+// 	}
+// }
 
 .comment-navigation,
 .posts-navigation,

@@ -278,7 +278,7 @@ add_filter( 'walker_nav_menu_start_el', 'expedite_delivery_system_add_arrow', 10
  * @param object $args Menu.
  */
 function expedite_delivery_system_add_arrow( $item_output, $item, $depth, $args ) {
-	if ( 'main' === $args->theme_location && in_array( 'menu-item-has-children', $item->classes, true ) ) {
+	if ( 'menu' === $args->theme_location && in_array( 'menu-item-has-children', $item->classes, true ) ) {
 		$item_output .= '<button class="arrow"><span class="screen-reader-text">Toggle Item</span></button>';
 	}
 	return $item_output;
