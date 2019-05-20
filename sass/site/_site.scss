@@ -11,12 +11,6 @@
 --------------------------------------------------------------*/
 @import "primary/comments";
 
-#page {
-  position: relative;
-  z-index: 5;
-  min-height: 100%;
-}
-
 .wrapper {
   max-width: $max_content_width;
   margin-left: auto;

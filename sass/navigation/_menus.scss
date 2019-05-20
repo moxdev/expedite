@@ -3,20 +3,20 @@
 	top: 0;
 	left: 0;
 	z-index: 999999;
-	background-color: $color__brand-1;
-	padding-left: 1em;
-	padding-bottom: 2em;
-	padding-top: 2em;
 	width: 100vw;
 	height: 100vh;
-	box-shadow: inset 1.5em 0 1.5em -0.75em rgba(0,0,0,0.5);
+	background-color: $color__brand-1;
+	padding-top: 2rem;
 	letter-spacing: 1.5px;
-	transform: translate3d(-100%, 0, 0);
-	transition: all 300ms ease 0ms;
+	transform: translateX(-100%);
+	transition: all 300ms ease-in-out 0ms;
 
 	&.nav-open {
-		transform: translate3d(-30%, 0, 0);
+		transform: translateX(-30%);
+		box-shadow:5px 5px 5px rgba(0, 0, 0, 0.5);
 	}
+
+	// Start here witht he refactor
 
 	> ul {
 		display: flex;
@@ -33,8 +33,6 @@
 	ul {
 		list-style: none;
 		margin: 0;
-		width: 300px;
-		float: right;
 
 		ul {
 			max-height: 0;
@@ -99,8 +97,7 @@
 		font-family: $font__med;
 		text-transform: uppcase;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-		;
-		padding: 1rem 3.5rem 1rem 1.5rem;
+		padding: 1rem 3.5rem 1rem 30%;
 	}
 
 	.current_page_item > a,
@@ -114,7 +111,6 @@
 .menu-toggle {
 	display: block;
 	padding-bottom: 2rem;
-	color: $color__brand-1;
 	position: relative;
 	border: none;
 	outline: none;
@@ -134,7 +130,7 @@
 	.inner:before {
 		content: '';
 		display: block;
-		background-color: $color__brand-1;
+		background-color: #111;
 		height: 4px;
 		width: 25px;
 		position: absolute;
