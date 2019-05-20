@@ -111,6 +111,14 @@
 		margin-right: $margin-lg + rem;
 	}
 }
+// Outside margin-right
+@mixin margin-right($margin-sm: map-get($outer_spacing, small), $margin-lg: map-get($outer_spacing, medium)) {
+	margin-right: $margin-sm + rem;
+
+	@include respond-to(small) {
+		margin-right: $margin-lg + rem;
+	}
+}
 
 /*
   This mixin can be used to set the object-fit:

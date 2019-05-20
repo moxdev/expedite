@@ -104,7 +104,7 @@
 			?>
 		</div><!-- .site-branding -->
 
-		<button class="mobile-menu-toggle" aria-controls="mobile-navigation" aria-expanded="false" aria-label="Main Menu"><span class="inner"><?php esc_html_e( 'Main Menu', 'expedite_delivery_system' ); ?></span></button>
+		<button class="menu-toggle" aria-controls="mobile-navigation" aria-expanded="false" aria-label="Main Menu"><span class="inner"><span class="screen-reader-text"><?php esc_html_e( 'Main Menu', 'expedite_delivery_system' ); ?></span></span></button>
 
 		<nav id="site-navigation" class="main-navigation">
 			<?php
