@@ -1,8 +1,29 @@
-.main-navigation {
-	display: none;
+body.mobile-nav-active .main-navigation {
+	overflow-y: scroll;
+	opacity: 1;
+}
 
-	&.nav-open {
-		display: block;
+.main-navigation {
+	position: fixed;
+	z-index: -1;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+	padding: 0 0 2rem 29vw;
+	background: $color__brand-1;
+	opacity: 0;
+	transition: opacity 0.25s;
+
+	body.mobile-nav-active & {
+		overflow-y: scroll;
+		opacity: 1;
+		z-index: 10;
 	}
 
 	> ul {
@@ -92,9 +113,7 @@
 }
 
 .menu-toggle {
-	// padding: 0 2.5rem 0 0;
-	// margin: 1rem 0 0 auto;
-
+	padding-bottom: 2rem;
 	color: $color__brand-1;
 	position: relative;
 	border: none;
