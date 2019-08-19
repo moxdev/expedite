@@ -21,6 +21,7 @@ const errorHandler = r => {
 gulp.task('serve', () => {
   browserSync.init({
     proxy: projectURL,
+    injectChanges: true,
   });
 });
 

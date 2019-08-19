@@ -9,7 +9,9 @@
     "google": true,
     "grecaptcha": true,
     "wp": true,
-    "jQuery": true
+    "jQuery": true,
+    "focusTrap": true,
+    "Waypoint": true
   },
   "extends": ["eslint:recommended", "wordpress"],
   "rules": {

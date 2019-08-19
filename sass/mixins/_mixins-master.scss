@@ -79,25 +79,25 @@
 	}
 }
 
+// Section Padding TOP/BOTTOM
+@mixin section-padding($padding-top: fill, $padding-bottom: null) {
+	@if $padding-bottom {
+		padding-top: $padding-top + rem;
+		padding-bottom: $padding-bottom + rem;
+	} @else {
+		padding-top: $padding-top + rem;
+		padding-bottom: $padding-top + rem;
+	}
+}
+
 // Outside padding
 @mixin padding-left-right($padding-sm: map-get($outer_spacing, small), $padding-lg: map-get($outer_spacing, medium)) {
 	padding-left: $padding-sm + rem;
 	padding-right: $padding-sm + rem;
 
-	@include respond-to(small) {
+	@include respond-to('750') {
 		padding-left: $padding-lg + rem;
 		padding-right: $padding-lg + rem;
-	}
-}
-
-// Outside padding
-@mixin padding-top-bottom($padding-sm: map-get($outer_spacing, small), $padding-lg: map-get($outer_spacing, medium)) {
-	padding-top: $padding-sm + rem;
-	padding-bottom: $padding-sm + rem;
-
-	@include respond-to(small) {
-		padding-top: $padding-lg + rem;
-		padding-bottom: $padding-lg + rem;
 	}
 }
 
@@ -106,7 +106,7 @@
 	margin-left: $margin-sm + rem;
 	margin-right: $margin-sm + rem;
 
-	@include respond-to(small) {
+	@include respond-to('750') {
 		margin-left: $margin-lg + rem;
 		margin-right: $margin-lg + rem;
 	}
@@ -115,7 +115,7 @@
 @mixin margin-right($margin-sm: map-get($outer_spacing, small), $margin-lg: map-get($outer_spacing, medium)) {
 	margin-right: $margin-sm + rem;
 
-	@include respond-to(small) {
+	@include respond-to('750') {
 		margin-right: $margin-lg + rem;
 	}
 }

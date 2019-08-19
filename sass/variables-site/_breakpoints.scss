@@ -1,19 +1,32 @@
-$breakpoints: ('xxx-small': 23.438em, // 375px
-  'xx-small': 28.125em, // 450px
-  'x-small': 35.938em, // 575px
-  'small': 46.875em, // 750px
-  'medium': 59.375em, // 950px
-  'large': 71.875em, // 1150px
-  'x-large': 84.375em, // 1350px
-  'xx-large': 109.375em // 1750px
+$breakpoints: (
+	'370': 23.125em, // 370px
+	'450': 28.125em, // 450px
+	'600': 37.5em, // 650px
+	'650': 40.625rem, // 650px
+	'750': 46.875em, // 750px
+	'950': 59.375em, // 950px
+	'1150': 71.875em, // 1150px
+	'1350': 84.375em, // 1350px
+	'1550': 96.875em, // 1550px
+	'1750': 109.375em, // 1750px
+	'1950': 121.875em, // 1950px
+	'2200': 137.5em, // 2200px
+	'2400': 150em, // 2400px
 );
 
-$breakpoints_vert: ('x-small': 28.125em, // 450px
-  'small': 53.125em, // 850px
+$breakpoints_vert: (
+	'450': 28.125em, // 450px
+	'650': 40.625em, // 650px
+	'730': 45.625em, // 730px
+	'800': 50em, // 800px
+	'1000': 62.5em, // 1000px
+	'1350': 84.375em, // 1350px
 );
 
-$outer_spacing: ('small': 1.5,
-  'medium': 2.5);
+$outer_spacing: (
+	'small': 1.5,
+	'medium': 2.5
+);
 
 $max_content_width: 62.5rem; // 1000px
 $max_content_width-lg: 68.750em; // 1100px

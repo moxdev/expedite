@@ -15,17 +15,8 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'expedite_delivery_system' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'expedite_delivery_system' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'expedite_delivery_system' ), 'expedite_delivery_system', '<a href="https://www.mm4solutions.com/">Millennium Marketing Solutions</a>' );
-				?>
+			<small>&copy; <?php bloginfo( 'name' ); ?> <?php esc_html_e( 'All Rights Reserved', 'expedite_delivery_system' ); ?>.</small>
+			<small><a class="mms" href="https://www.mm4solutions.com"><?php esc_html_e( 'Website by Millennium Marketing Solutions', 'expedite_delivery_system' ); ?></a>.</small>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

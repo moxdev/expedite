@@ -49,9 +49,9 @@ if ( ! function_exists( 'expedite_delivery_system_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu'     => esc_html__( 'Main Menu', 'expedite_delivery_system' ),
-				'aux_menu' => esc_html__( 'Aux Menu', 'expedite_delivery_system' ),
-				'ftr_menu' => esc_html__( 'Footer Menu', 'expedite_delivery_system' ),
+				'menu-main' => esc_html__( 'Main Menu', 'expedite_delivery_system' ),
+				'menu-aux'  => esc_html__( 'Aux Menu', 'expedite_delivery_system' ),
+				'menu-ftr'  => esc_html__( 'Footer Menu', 'expedite_delivery_system' ),
 			)
 		);
 
@@ -142,11 +142,15 @@ add_action( 'widgets_init', 'expedite_delivery_system_widgets_init' );
  * Enqueue scripts and styles.
  */
 function expedite_delivery_system_scripts() {
-	wp_enqueue_style( 'expedite_delivery_system-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'expedite-delivery-system-style', get_stylesheet_uri(), array(), '20190422' );
 
-	wp_enqueue_script( 'expedite_delivery_system-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'expedite-delivery-system-navigation', get_template_directory_uri() . '/js/min/navigation.min.js', array( 'expedite-delivery-system-focus-trap-library' ), '20190422', true );
 
-	wp_enqueue_script( 'expedite_delivery_system-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'expedite-delivery-system-skip-link-focus-fix', get_template_directory_uri() . '/js/min/skip-link-focus-fix.min.js', array(), '20190422', true );
+
+	wp_register_script( 'expedite-delivery-system-waypoints-library', get_template_directory_uri() . '/js/vendor/noframework.waypoints.min.js', array(), '20190422', true );
+
+	wp_register_script( 'expedite-delivery-system-focus-trap-library', get_template_directory_uri() . '/js/vendor/focus-trap.min.js', array(), '20190422', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -182,15 +186,6 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 			'menu_title'  => 'Social Media',
 			'menu_slug'   => 'social-media-channels',
 			'post_id'     => 'social-media-channels',
-			'parent_slug' => 'global-information',
-		)
-	);
-	acf_add_options_sub_page(
-		array(
-			'page_title'  => 'Footer Content',
-			'menu_title'  => 'Footer Content',
-			'menu_slug'   => 'footer-custom-content',
-			'post_id'     => 'footer-custom-content',
 			'parent_slug' => 'global-information',
 		)
 	);
@@ -266,8 +261,6 @@ function expedite_delivery_system_create_testimonial_custom_post_type() {
 }
 add_action( 'init', 'expedite_delivery_system_create_testimonial_custom_post_type', 0 );
 
-// Adds arrow button from mobile menu dropdown.
-add_filter( 'walker_nav_menu_start_el', 'expedite_delivery_system_add_arrow', 10, 4 );
 /**
  * Main nav submenu toggling.
  * Add arrow icons into registered menu "main"
@@ -278,11 +271,12 @@ add_filter( 'walker_nav_menu_start_el', 'expedite_delivery_system_add_arrow', 10
  * @param object $args Menu.
  */
 function expedite_delivery_system_add_arrow( $item_output, $item, $depth, $args ) {
-	if ( 'menu' === $args->theme_location && in_array( 'menu-item-has-children', $item->classes, true ) ) {
-		$item_output .= '<button class="arrow"><span class="screen-reader-text">Toggle Item</span></button>';
+	if ( 'menu-main' === $args->theme_location && in_array( 'menu-item-has-children', $item->classes, true ) ) {
+		$item_output .= '<button class="toggle-sub-menu"><span class="screen-reader-text">' . __( 'Toggle Item', 'expedite_delivery_system' ) . '</span></button>';
 	}
 	return $item_output;
 }
+add_filter( 'walker_nav_menu_start_el', 'expedite_delivery_system_add_arrow', 10, 4 );
 
 /**
  * Object Fit Polyfill for IE

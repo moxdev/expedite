@@ -1,22 +1,52 @@
-.main-navigation {
-	position: fixed;
+#aux-menu {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+	a {
+		color: $color__brand-2;
+		text-decoration: none;
+		font-family: $font__black;
+		padding-left: .5rem;
+		@include font-smooth;
+
+		&:before {
+			content: '\007C';
+			color: #fff;
+			padding-right: .5rem;
+		}
+	}
+}
+
+#mobile-nav-overlay {
+	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 999999;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: auto;
 	background-color: $color__brand-1;
-	padding-top: 2rem;
 	letter-spacing: 1.5px;
 	transform: translateX(-100%);
 	transition: all 300ms ease-in-out 0ms;
 
-	&.nav-open {
-		transform: translateX(-30%);
-		box-shadow:5px 5px 5px rgba(0, 0, 0, 0.5);
+	@include respond-to('950') {
+		display: none;
 	}
 
-	// Start here witht he refactor
+	&.open {
+		transform: translateX(-20%);
+		box-shadow:3px 3px 3px rgba(0, 0, 0, 0.5);
+
+		@include respond-to('370') {
+			transform: translateX(-30%);
+		}
+	}
+
+	// Start here with the refactor
 
 	> ul {
 		display: flex;
@@ -33,11 +63,12 @@
 	ul {
 		list-style: none;
 		margin: 0;
+		padding: 0;
 
 		ul {
 			max-height: 0;
 			overflow: hidden;
-			box-shadow: 0 0 7px rgba(0, 0, 0, .6);
+			// box-shadow: 0 0 7px rgba(0, 0, 0, .6);
 			transition: max-height .25s;
 
 			ul {
@@ -53,7 +84,7 @@
 			}
 
 			a {
-				// width: 200px;
+				padding-left: 35%;
 			}
 
 			:hover > a,
@@ -110,29 +141,38 @@
 
 .menu-toggle {
 	display: block;
-	padding-bottom: 2rem;
+	width: 30px;
+	padding-bottom: 1.2rem;
 	position: relative;
 	border: none;
-	outline: none;
-	background: none;
-	font-size: 1.375em;
+	outline: 0;
+	background: transparent;
 	line-height: 1;
+	margin-top: 1rem;
 	margin-left: auto;
-	@include margin-right;
+
+	@include respond-to('950') {
+		display: none;
+	}
 
 	&:hover {
 		cursor: pointer;
 		background: none;
 	}
 
+	&:active,
+	&:focus {
+		outline: 1px dotted $color__brand-2
+	}
+
 	&:before,
 	.inner:after,
 	.inner:before {
 		content: '';
-		display: block;
-		background-color: #111;
+		display: inline-block;
+		background-color: #fff;
 		height: 4px;
-		width: 25px;
+		width: 30px;
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -141,14 +181,14 @@
 	}
 
 	.inner:before {
-		top: 9px;
+		top: 11px;
 	}
 
 	.inner:after {
-		top: 18px;
+		top: 22px;
 	}
 
-	&.nav-open {
+	&.active {
 		&:before {
 			transform: rotate(45deg);
 			top: 10px;
@@ -164,12 +204,12 @@
 		}
 	}
 
-	@include respond-to(large) {
+	@include respond-to('1150') {
 		display: none;
 	}
 }
 
-.arrow {
+.toggle-sub-menu {
 	position: absolute;
 	right: 10px;
 	top: 13px;
@@ -185,7 +225,7 @@
 	border: none;
 	line-height: 1;
 
-	@include respond-to('large') {
+	@include respond-to('950') {
 		display: none;
 	}
 
