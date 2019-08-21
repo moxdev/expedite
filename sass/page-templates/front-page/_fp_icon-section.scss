@@ -1,0 +1,37 @@
+#front-page-icon {
+	background-image: url('imgs/bolt-sm.jpg');
+	background-repeat: repeat;
+	// background-size: 50%;
+	@include font-smooth;
+
+	h2.section-title {
+		color: $color__brand-2;
+	}
+
+	h3.section-sub-title {
+		color: #fff;
+	}
+
+	.icon-container {
+
+		img {
+			width: 12.5rem;
+		}
+
+		h2.card-title {
+			color: $color__brand-2;
+			text-transform: capitalize;
+		}
+
+		.card-desc {
+			display: none;
+			color: #fff;
+
+			@include respond-to('950') {
+				display: block;
+			}
+		}
+	}
+
+
+}

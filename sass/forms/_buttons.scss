@@ -62,3 +62,21 @@ input[type="submit"] {
 		color: $color__brand-1;
 	}
 }
+
+.btn-alt {
+	@extend button;
+	text-decoration: none;
+	border-color: $color__border-button-alt;
+	color: $color__brand-2;
+
+	&:visited {
+		color: $color__brand-2;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $color__brand-2;
+		color: #fff;
+	}
+}

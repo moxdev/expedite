@@ -46,6 +46,8 @@ if ( ! function_exists( 'expedite_delivery_system_setup' ) ) :
 		add_image_size( 'home-carousel-lg', 1500, 680, true );
 		add_image_size( 'home-carousel-xl', 2200, 1000, true );
 
+		add_image_size( 'icon-cards', 298, 9999, false );
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
@@ -327,3 +329,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Front Page Featured Image.
  */
 require get_template_directory() . '/inc/components/front-page/fp-featured-img.php';
+
+/**
+ * Front Page Icon Section.
+ */
+require get_template_directory() . '/inc/components/front-page/fp-icon-section.php';

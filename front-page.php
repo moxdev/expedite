@@ -27,6 +27,9 @@ get_header();
 				endwhile; // End of the loop.
 				?>
 			</div>
+			<?php
+			expedite_delivery_system_icon_section();
+			?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
