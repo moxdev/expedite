@@ -283,7 +283,7 @@ add_filter( 'walker_nav_menu_start_el', 'expedite_delivery_system_add_arrow', 10
  *
  * @link https://github.com/bfred-it/object-fit-images
  */
-function quantum_object_fit_js() { ?>
+function expedite_delivery_system_object_fit_js() { ?>
 	<script>objectFitImages();</script>
 	<?php
 }
@@ -322,3 +322,8 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Front Page Featured Image.
+ */
+require get_template_directory() . '/inc/components/front-page/fp-featured-img.php';

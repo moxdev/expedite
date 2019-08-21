@@ -10,11 +10,11 @@
  */
 
 ?>
-		</div><!-- .wrapper -->
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
+			<?php the_custom_logo(); ?>
 			<small>&copy; <?php bloginfo( 'name' ); ?> <?php esc_html_e( 'All Rights Reserved', 'expedite_delivery_system' ); ?>.</small>
 			<small><a class="mms" href="https://www.mm4solutions.com"><?php esc_html_e( 'Website by Millennium Marketing Solutions', 'expedite_delivery_system' ); ?></a>.</small>
 		</div><!-- .site-info -->

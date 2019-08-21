@@ -11,9 +11,11 @@
 --------------------------------------------------------------*/
 @import "primary/comments";
 
-.wrapper {
+.main-content-wrapper {
   max-width: $max_content_width;
   margin-left: auto;
   margin-right: auto;
   @include padding-left-right;
+  @include section-padding(2);
+  text-align: center;
 }

@@ -1,4 +1,5 @@
 #masthead {
+	position: relative;
 
 	.aux-nav-menu-toggle-container {
 		position: relative;
@@ -39,14 +40,31 @@
 		}
 	}
 
-	.custom-logo {
-		// position: absolute;
-		top: 1rem;
-		left: 1rem;
-		width: 8.4375rem;
+	.branding-desktop-nav-container {
+		background-color: #fff;
+		position: relative;
+	}
 
-		@media only screen and (min-width: 23.4375rem) {
-			width: 12.5rem;
+	.site-branding {
+		position: relative;
+	}
+
+	.custom-logo-link {
+		position: absolute;
+		top: -2.5rem;
+		left: 1.5rem;
+		z-index: 200;
+
+		@include respond-to('370') {
+			top: -3rem;
+		}
+	}
+
+	.custom-logo {
+		width: 10.9375rem;
+
+		@include respond-to('370') {
+			width: 13.125rem;
 		}
 	}
 }

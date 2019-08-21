@@ -2,21 +2,63 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
+	display: inline-block;
 	background: $color__background-button;
-	color: rgba(0, 0, 0, .8);
-	@include font-size(0.75);
-	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: 1.4375em 2.1875em 1.4375em;
+	border: 1px solid $color__border-button;
+	border-radius: 5px;
+	color: $color__brand-1;
+	@include font-size(0.875);
+	font-family: $font__black;
+	line-height: 1.2;
+	letter-spacing: .5px;
+	text-align: center;
+	text-transform: uppercase;
+	-webkit-appearance: none;
+	transition: background 0.25s;
 
-	&:hover {
-		border-color: $color__border-button-hover;
+	@include respond-to('1150') {
+		@include font-size(1);
+		padding: 0.8rem 1.75rem 0.9rem;
 	}
 
+	&:hover,
 	&:active,
 	&:focus {
-		border-color: $color__border-button-focus;
+		// background: $color__background-button-hover;
+		background: darken($color__background-button, 5%);
+	}
+
+	&:hover,
+	&:active {
+		cursor: pointer;
+	}
+
+	&:focus {
+		outline: 0;
+	}
+
+	// &:hover {
+	// 	border-color: $color__border-button-hover;
+	// }
+
+	// &:active,
+	// &:focus {
+	// 	border-color: $color__border-button-focus;
+	// }
+}
+
+.btn {
+	@extend button;
+	text-decoration: none;
+
+	// &:hover {
+	// 	color: #fff;
+	// }
+
+	&:visited,
+	&:active,
+	&:focus {
+		color: $color__brand-1;
 	}
 }

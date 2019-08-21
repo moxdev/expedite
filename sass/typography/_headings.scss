@@ -1,3 +1,23 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
+
+h1.entry-title {
+	font-family: $font__black;
+	font-size: 1.5rem;
+	color: $color__brand-3;
+	text-transform: uppercase;
+	line-height: 1;
+	margin: 0 0 1rem;
+}
+
+h2 {
+	@extend h1.entry-title;
+}
+
+h3 {
+	font-family: $font__med;
+	font-size: 1.188rem;
+	color: $color__brand-1;
+	margin: 0 0 1.5rem;
+}

@@ -1,0 +1,10 @@
+.home {
+	@import 'fp-featured-img';
+
+	.hentry {
+		h2 {
+			@extend h3;
+			text-transform: capitalize;
+		}
+	}
+}
