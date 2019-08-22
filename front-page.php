@@ -29,6 +29,9 @@ get_header();
 			</div>
 			<?php
 			expedite_delivery_system_icon_section();
+			expedite_delivery_system_front_page_mobile_app_callout();
+			expedite_delivery_system_front_page_callout();
+			expedite_delivery_system_testimonial_display();
 			?>
 		</main><!-- #main -->
 	</div><!-- #primary -->

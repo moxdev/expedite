@@ -41,12 +41,14 @@ if ( ! function_exists( 'expedite_delivery_system_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'home-carousel-sm', 750, 340, true );
-		add_image_size( 'home-carousel-md', 1000, 455, true );
-		add_image_size( 'home-carousel-lg', 1500, 680, true );
-		add_image_size( 'home-carousel-xl', 2200, 1000, true );
+		add_image_size( 'home-testimonial-sm', 750, 500, true );
+		add_image_size( 'home-testimonial-md', 1000, 667, true );
+		add_image_size( 'home-testimonial-lg', 1500, 1000, true );
+		add_image_size( 'home-testimonial-xl', 2200, 1467, true );
 
 		add_image_size( 'icon-cards', 298, 9999, false );
+
+		add_image_size( 'icon-mobile-app', 236, 9999, false );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -200,47 +202,40 @@ if ( function_exists( 'acf_add_options_page' ) ) {
  */
 function expedite_delivery_system_create_testimonial_custom_post_type() {
 
-	$labels  = array(
-		'name'                  => 'Testimonials',
-		'singular_name'         => 'Testimonial',
-		'menu_name'             => 'Testimonials',
-		'name_admin_bar'        => 'Testimonials',
-		'archives'              => 'Testimonials Archives',
-		'attributes'            => 'Testimonials Attributes',
-		'parent_item_colon'     => 'Parent Item: Testimonials',
-		'all_items'             => 'All Testimonials',
-		'add_new_item'          => 'Add New Testimonial',
-		'add_new'               => 'Add New Testimonial',
-		'new_item'              => 'New Testimonial',
-		'edit_item'             => 'Edit Testimonial',
-		'update_item'           => 'Update Testimonial',
-		'view_item'             => 'View Testimonial',
-		'view_items'            => 'View Testimonials',
-		'search_items'          => 'Search Testimonials',
-		'not_found'             => 'Not found',
-		'not_found_in_trash'    => 'Not found in Trash',
-		'featured_image'        => 'Featured Image',
-		'set_featured_image'    => 'Set featured image',
-		'remove_featured_image' => 'Remove featured image',
-		'use_featured_image'    => 'Use as featured image',
-		'insert_into_item'      => 'Insert into item',
-		'uploaded_to_this_item' => 'Uploaded to this item',
-		'items_list'            => 'Items list',
-		'items_list_navigation' => 'Items list navigation',
-		'filter_items_list'     => 'Filter items list',
+	$labels = array(
+		'name'                  => _x( 'Testimonials', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Testimonial', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'             => __( 'Testimonials', 'text_domain' ),
+		'name_admin_bar'        => __( 'Testimonials', 'text_domain' ),
+		'archives'              => __( 'Testimonial Archives', 'text_domain' ),
+		'attributes'            => __( 'Testimonial Attributes', 'text_domain' ),
+		'parent_item_colon'     => __( 'Parent Testimonial:', 'text_domain' ),
+		'all_items'             => __( 'All Testimonials', 'text_domain' ),
+		'add_new_item'          => __( 'Add New Testimonial', 'text_domain' ),
+		'add_new'               => __( 'Add Testimonial', 'text_domain' ),
+		'new_item'              => __( 'New Testimonial', 'text_domain' ),
+		'edit_item'             => __( 'Edit Testimonial', 'text_domain' ),
+		'update_item'           => __( 'Update Testimonial', 'text_domain' ),
+		'view_item'             => __( 'View Testimonial', 'text_domain' ),
+		'view_items'            => __( 'View Testimonial', 'text_domain' ),
+		'search_items'          => __( 'Search Testimonials', 'text_domain' ),
+		'not_found'             => __( 'Testimonial Not found', 'text_domain' ),
+		'not_found_in_trash'    => __( 'Testimonial Not found in Trash', 'text_domain' ),
+		'featured_image'        => __( 'Testimonial Featured Image', 'text_domain' ),
+		'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
+		'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
+		'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
+		'insert_into_item'      => __( 'Insert into testimonial', 'text_domain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this testimonial', 'text_domain' ),
+		'items_list'            => __( 'Testimonials list', 'text_domain' ),
+		'items_list_navigation' => __( 'Testimonials list navigation', 'text_domain' ),
+		'filter_items_list'     => __( 'Filter testimonials list', 'text_domain' ),
 	);
-	$rewrite = array(
-		'slug'       => 'testimonial',
-		'with_front' => true,
-		'pages'      => true,
-		'feeds'      => true,
-	);
-	$args    = array(
-		'label'               => 'Testimonial',
-		'description'         => 'Testimonial Section',
+	$args   = array(
+		'label'               => __( 'Testimonial', 'text_domain' ),
+		'description'         => __( 'Testimonials', 'text_domain' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'revisions' ),
-		'taxonomies'          => array( 'testimonial' ),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
@@ -248,17 +243,14 @@ function expedite_delivery_system_create_testimonial_custom_post_type() {
 		'menu_position'       => 5,
 		'menu_icon'           => 'dashicons-testimonial',
 		'show_in_admin_bar'   => true,
-		'show_in_nav_menus'   => false,
+		'show_in_nav_menus'   => true,
 		'can_export'          => true,
 		'has_archive'         => true,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'query_var'           => 'testimonial',
-		'rewrite'             => $rewrite,
 		'capability_type'     => 'page',
-		'show_in_rest'        => true,
 	);
-	register_post_type( 'testimonials', $args );
+	register_post_type( 'testimonial', $args );
 
 }
 add_action( 'init', 'expedite_delivery_system_create_testimonial_custom_post_type', 0 );
@@ -334,3 +326,18 @@ require get_template_directory() . '/inc/components/front-page/fp-featured-img.p
  * Front Page Icon Section.
  */
 require get_template_directory() . '/inc/components/front-page/fp-icon-section.php';
+
+/**
+ * Front Page Mobile App Icon Section.
+ */
+require get_template_directory() . '/inc/components/front-page/fp-mobile-app-section.php';
+
+/**
+ * Front Page Callout Section.
+ */
+require get_template_directory() . '/inc/components/front-page/fp-call-out-section.php';
+
+/**
+ * Front Page Testimonial Section.
+ */
+require get_template_directory() . '/inc/components/front-page/fp-testimonial-section.php';

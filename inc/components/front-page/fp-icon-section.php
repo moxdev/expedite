@@ -7,7 +7,7 @@
 
 if ( ! function_exists( 'expedite_delivery_system_icon_section' ) ) :
 	/**
-	 * Outputs feature image post_thumbnail with a title and wysiwyg
+	 * Outputs the icon cards section with background image
 	 */
 	function expedite_delivery_system_icon_section() {
 		if ( function_exists( 'get_field' ) ) :

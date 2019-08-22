@@ -1,0 +1,33 @@
+#front-page-mobile-app {
+	background-color: $color__brand-2;
+	@include font-smooth;
+
+	.content-wrapper {
+		position: relative;
+
+		img {
+			position: absolute;
+			top: -13%;
+			left: 50%;
+			transform: translate(-50%, 0);
+			width: 165px;
+
+			@include respond-to('950') {
+				width: 230px
+			}
+		}
+	}
+
+	h2.section-title {
+	}
+
+	h3.section-sub-title {
+	}
+
+	.mobile-app-content {
+
+		img {
+			width: 12.5rem;
+		}
+	}
+}
