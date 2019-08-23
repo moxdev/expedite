@@ -50,6 +50,7 @@ if ( ! function_exists( 'expedite_delivery_system_setup' ) ) :
 
 		add_image_size( 'icon-mobile-app', 236, 9999, false );
 		add_image_size( 'icon-industries', 380, 9999, false );
+		add_image_size( 'icon-global-callout', 600, 9999, false );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -194,6 +195,15 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 			'parent_slug' => 'global-information',
 		)
 	);
+	acf_add_options_sub_page(
+		array(
+			'page_title'  => 'Global Callout Information',
+			'menu_title'  => 'Global Callout',
+			'menu_slug'   => 'global-callout',
+			'post_id'     => 'global-callout',
+			'parent_slug' => 'global-information',
+		)
+	);
 }
 
 /**
@@ -283,7 +293,7 @@ add_filter( 'mce_buttons_2', 'three_tree_flats_add_style_select_buttons' );
 function three_tree_flats_admin_styles( $init_array ) {
 	$style_formats               = array(
 		array(
-			'title'    => 'H2 Section Header',
+			'title'    => 'Blue H2 Section Title',
 			'selector' => 'h2',
 			'classes'  => 'section-sub-title',
 		),
@@ -404,3 +414,13 @@ require get_template_directory() . '/inc/components/featured-img-drill-page.php'
  * Industries Page Icon Card Section.
  */
 require get_template_directory() . '/inc/components/industries-icon-card-section.php';
+
+/**
+ * Global Callout Section.
+ */
+require get_template_directory() . '/inc/components/global-callout-section.php';
+
+/**
+ * Our Team Section.
+ */
+require get_template_directory() . '/inc/components/our-team-section.php';

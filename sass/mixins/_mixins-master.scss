@@ -21,6 +21,11 @@
 	margin-right: auto;
 }
 
+@mixin margin-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 // Clearfix
 @mixin clearfix() {
 	content: "";

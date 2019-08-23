@@ -1,5 +1,12 @@
 .gallery {
 	margin-bottom: 1.5em;
+
+	@include respond-to('450') {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .gallery-item {
@@ -8,14 +15,40 @@
 	vertical-align: top;
 	width: 100%;
 
-	// Loops to enumerate the classes for gallery columns.
-	@for $i from 2 through 9 {
-		.gallery-columns-#{$i} & {
-			max-width: map-get( $columns, $i );
+	@include respond-to('450') {
+		flex: 1 0 50%;
+	}
+
+	@include respond-to('950') {
+		flex: 0 1 25%;
+	}
+
+	img {
+		width: 100%;
+		max-width: 220px;
+
+		@include respond-to('450') {
+			padding: .5rem;
 		}
+
+		@include respond-to('950') {
+			padding: 1rem;
+		}
+	}
+
+	// Loops to enumerate the classes for gallery columns.
+	// @for $i from 2 through 9 {
+	// 	.gallery-columns-#{$i} & {
+	// 		max-width: map-get( $columns, $i );
+	// 	}
+	// }
+
+	.gallery-columns-4 {
+
 	}
 }
 
 .gallery-caption {
 	display: block;
 }
+

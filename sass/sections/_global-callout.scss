@@ -1,13 +1,12 @@
-#front-page-mobile-app {
-	background-color: $color__brand-2;
-	@include font-smooth;
+#global-callout {
+	background: $color__background-alt;
 
 	.content-wrapper {
 		position: relative;
 
 		img {
 			position: absolute;
-			top: -13%;
+			top: -30%;
 			left: 50%;
 			transform: translate(-50%, 0);
 			width: 165px;
@@ -16,5 +15,9 @@
 				width: 230px
 			}
 		}
+	}
+
+	.btn {
+		background: $color__brand-2;
 	}
 }

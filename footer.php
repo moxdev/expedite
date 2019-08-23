@@ -10,6 +10,15 @@
  */
 
 ?>
+	<?php
+	if ( function_exists( 'get_field' ) ) :
+		$show_global_callout = get_field( 'show_global_callout' );
+
+		if ( $show_global_callout ) :
+			expedite_delivery_system_front_page_global_callout();
+		endif;
+	endif;
+	?>
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">

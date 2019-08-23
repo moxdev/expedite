@@ -23,9 +23,10 @@ if ( ! function_exists( 'expedite_delivery_system_front_page_mobile_app_callout'
 					<div class="content-wrapper">
 						<?php
 						if ( $ma_img ) :
+							$ma_img_title = $ma_img['title'] ? $ma_img['title'] : $ma_img['alt'];
 							?>
 							<figure class="mobile-app-featured-image">
-								<img src="<?php echo esc_url( $ma_img['sizes']['icon-mobile-app'] ); ?>" alt="<?php echo esc_attr( $ma_img['alt'] ); ?>" title="<?php echo esc_attr( $ma_img['title'] ); ?>"/>
+								<img src="<?php echo esc_url( $ma_img['sizes']['icon-mobile-app'] ); ?>" alt="<?php echo esc_attr( $ma_img['alt'] ); ?>" title="<?php echo esc_attr( $ma_img_title ); ?>"/>
 							</figure>
 							<?php
 						endif;
