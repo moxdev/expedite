@@ -11,6 +11,10 @@
 --------------------------------------------------------------*/
 @import "primary/comments";
 
+#content {
+  background: #fff;
+}
+
 .main-content-wrapper {
   max-width: $max_content_width;
   margin-left: auto;

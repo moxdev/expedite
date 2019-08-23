@@ -1,0 +1,30 @@
+#colophon {
+	background: $color__brand-1;
+	color: #fff;
+	border-top: 5px solid $color__brand-2;
+
+	.col-left {
+		margin-bottom: 1.5rem;
+	}
+
+	.custom-logo-link {
+		width: 178px;
+		margin-bottom: 1rem;
+	}
+
+	.copy-container {
+		@include font-size(.875);
+		font-family: $font__med;
+
+		span {
+			display: block;
+			margin-bottom: .5rem;
+		}
+
+		a {
+			display: block;
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+}

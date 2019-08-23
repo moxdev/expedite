@@ -67,11 +67,22 @@ if ( ! function_exists( 'expedite_delivery_system_icon_section' ) ) :
 										while ( have_rows( 'icon_cards' ) ) :
 											the_row();
 											$icon_card_image       = get_sub_field( 'icon_card_image' );
+											$icon_card_page_link   = get_sub_field( 'icon_page_link' );
 											$icon_card_title       = get_sub_field( 'icon_card_title' );
 											$icon_card_description = get_sub_field( 'icon_card_description' );
 											?>
 											<div class="icon-card">
-												<img src="<?php echo esc_url( $icon_card_image['sizes']['icon-cards'] ); ?>" alt="<?php echo esc_attr( $icon_card_image['alt'] ); ?>" title="<?php echo esc_attr( $icon_card_image['title'] ); ?>"/>
+												<?php
+												if ( $icon_card_page_link ) :
+													$link_url    = $icon_card_page_link['url'];
+													$link_target = $icon_card_page_link['target'] ? $icon_card_page_link['target'] : '_self';
+													?>
+													<a class="page-link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+														<img src="<?php echo esc_url( $icon_card_image['sizes']['icon-cards'] ); ?>" alt="<?php echo esc_attr( $icon_card_image['alt'] ); ?>" title="<?php echo esc_attr( $icon_card_image['title'] ); ?>"/>
+													</a>
+													<?php
+												endif;
+												?>
 
 												<h2 class="card-title">
 													<?php

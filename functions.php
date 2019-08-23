@@ -341,3 +341,8 @@ require get_template_directory() . '/inc/components/front-page/fp-call-out-secti
  * Front Page Testimonial Section.
  */
 require get_template_directory() . '/inc/components/front-page/fp-testimonial-section.php';
+
+/**
+ * Social Media Menu.
+ */
+require get_template_directory() . '/inc/components/social-media-menu.php';

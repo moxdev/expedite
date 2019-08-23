@@ -253,6 +253,86 @@
 	}
 }
 
+/* Social Media Menu */
+.social-media {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 0 3rem;
+  padding: 0;
+
+  li {
+    margin-right: 0.25rem;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    display: block;
+    text-indent: 110%;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-image: url(imgs/sprite-social-media-icons.svg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid $color__brand-2;
+    outline: 0;
+    transition: background-color 0.25s, border-color 0.25s;
+
+    &:hover,
+    &:focus {
+      background-color: lighten(green, 20%);
+      border-color: green;
+    }
+  }
+
+  .tw a {
+    background-position: 0 -32px;
+  }
+
+  .linked a {
+    background-position: 0 -100px;
+  }
+
+  .goo a {
+    background-position: 0 -66px;
+  }
+
+  .yt a {
+    background-position: 0 -132px;
+  }
+
+  .pin a {
+    background-position: 0 -165px;
+  }
+
+  .insta a {
+    background-position: 0 -198px;
+  }
+}
+
+/* Footer Menu */
+#ftr-menu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	a {
+		@extend .btn-alt;
+		width: 180px;
+		padding: 1rem;
+		margin-bottom: 1rem;
+	}
+}
+
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
