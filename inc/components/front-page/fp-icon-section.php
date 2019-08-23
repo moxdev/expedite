@@ -78,7 +78,14 @@ if ( ! function_exists( 'expedite_delivery_system_icon_section' ) ) :
 													$link_target = $icon_card_page_link['target'] ? $icon_card_page_link['target'] : '_self';
 													?>
 													<a class="page-link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
-														<img src="<?php echo esc_url( $icon_card_image['sizes']['icon-cards'] ); ?>" alt="<?php echo esc_attr( $icon_card_image['alt'] ); ?>" title="<?php echo esc_attr( $icon_card_image['title'] ); ?>"/>
+														<?php
+														if ( $icon_card_image ) :
+															$icon_card_image_title = $icon_card_image['title'] ? $icon_card_image['title'] : $icon_card_image['alt'];
+															?>
+															<img src="<?php echo esc_url( $icon_card_image['sizes']['icon-cards'] ); ?>" alt="<?php echo esc_attr( $icon_card_image['alt'] ); ?>" title="<?php echo esc_attr( $icon_card_image_title ); ?>"/>
+															<?php
+														endif;
+														?>
 													</a>
 													<?php
 												endif;
@@ -122,11 +129,9 @@ if ( ! function_exists( 'expedite_delivery_system_icon_section' ) ) :
 						endif;
 						?>
 					</div>
-				</section><!-- .front-page-hero -->
+				</section>
 				<?php
 			endif;
-
 		endif;
-
 	}
 endif;

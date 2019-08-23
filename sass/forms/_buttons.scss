@@ -52,6 +52,14 @@ input[type="submit"] {
 	@extend button;
 	text-decoration: none;
 
+	&:after {
+		content: '\00BB';
+		position: absolute;
+		font-size: 1.6em;
+		margin-left: 6px;
+		line-height: .5;
+	}
+
 	// &:hover {
 	// 	color: #fff;
 	// }
@@ -65,9 +73,18 @@ input[type="submit"] {
 
 .btn-alt {
 	@extend button;
+	position: relative;
 	text-decoration: none;
 	border-color: $color__border-button-alt;
 	color: $color__brand-2;
+
+	&:after {
+		content: '\00BB';
+		position: absolute;
+		font-size: 1.6em;
+		margin-left: 6px;
+		line-height: .5;
+	}
 
 	&:visited {
 		color: $color__brand-2;

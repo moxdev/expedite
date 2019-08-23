@@ -1,0 +1,28 @@
+.page-template-page-industries {
+
+	.industry-icon-card {
+		margin-bottom: 2.5rem;
+		text-align: center;
+
+		@include respond-to('750') {
+			display: flex;
+		}
+
+		.col-left {
+			flex: 1;
+		}
+
+		.col-right {
+			flex: 2;
+
+			@include respond-to('750') {
+				text-align: left;
+			}
+		}
+
+		img {
+			width: 177px;
+			margin-bottom: 1rem;
+		}
+	}
+}

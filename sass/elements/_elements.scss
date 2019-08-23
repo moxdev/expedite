@@ -30,18 +30,47 @@ figure {
 	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
 }
 
-.featured-image {
+.page-feature {
+	margin: 0;
+	color: #fff;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 0;
+	@include padding-left-right;
+	padding-top: 3em;
+	padding-bottom: 3em;
+	overflow: hidden;
 
-	figure {
-		margin: 0;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: -1;
+		background: rgba(0,0,0,0.2);
+	}
 
-		img {
-			display: block;
-			object-fit: cover;
-			font-family: 'object-fit: cover';
-			width: 100%;
-			height: 600px;
-		}
+	figcaption {
+		position: relative;
+		z-index: 5;
+		font-size: 2rem;
+		font-family: $font__black;
+		text-transform: uppercase;
+		text-align: right;
+	}
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		object-fit: cover;
+		font-family: 'object-fit: cover';
+		width: 100%;
+		height: 100%;
 	}
 }
 

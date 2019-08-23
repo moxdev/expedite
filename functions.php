@@ -49,6 +49,7 @@ if ( ! function_exists( 'expedite_delivery_system_setup' ) ) :
 		add_image_size( 'icon-cards', 298, 9999, false );
 
 		add_image_size( 'icon-mobile-app', 236, 9999, false );
+		add_image_size( 'icon-industries', 380, 9999, false );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -256,6 +257,53 @@ function expedite_delivery_system_create_testimonial_custom_post_type() {
 add_action( 'init', 'expedite_delivery_system_create_testimonial_custom_post_type', 0 );
 
 /**
+ * Admin stylesheet.
+ */
+function expedite_delivery_system_admin_style() {
+	add_editor_style( 'admin-editor.css' );
+}
+add_action( 'admin_init', 'expedite_delivery_system_admin_style' );
+
+/**
+ * Custom WYSIWYG items
+ *
+ * @param array $buttons Array of MCE buttons.
+ */
+function three_tree_flats_add_style_select_buttons( $buttons ) {
+	array_unshift( $buttons, 'styleselect' );
+	return $buttons;
+}
+add_filter( 'mce_buttons_2', 'three_tree_flats_add_style_select_buttons' );
+
+/**
+ * Styles to add to the format dropdown menu
+ *
+ * @param array $init_array Array.
+ */
+function three_tree_flats_admin_styles( $init_array ) {
+	$style_formats               = array(
+		array(
+			'title'    => 'H2 Section Header',
+			'selector' => 'h2',
+			'classes'  => 'section-sub-title',
+		),
+		array(
+			'title'    => 'Dual Column List',
+			'selector' => 'ul',
+			'classes'  => 'dual-column',
+		),
+		array(
+			'title'    => 'Button',
+			'selector' => 'a',
+			'classes'  => 'btn',
+		),
+	);
+	$init_array['style_formats'] = wp_json_encode( $style_formats );
+	return $init_array;
+}
+add_filter( 'tiny_mce_before_init', 'three_tree_flats_admin_styles' );
+
+/**
  * Main nav submenu toggling.
  * Add arrow icons into registered menu "main"
  *
@@ -346,3 +394,13 @@ require get_template_directory() . '/inc/components/front-page/fp-testimonial-se
  * Social Media Menu.
  */
 require get_template_directory() . '/inc/components/social-media-menu.php';
+
+/**
+ * Featured Image Drill Pages.
+ */
+require get_template_directory() . '/inc/components/featured-img-drill-page.php';
+
+/**
+ * Industries Page Icon Card Section.
+ */
+require get_template_directory() . '/inc/components/industries-icon-card-section.php';

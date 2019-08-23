@@ -160,6 +160,11 @@
 
 	</header><!-- #masthead -->
 
-	<?php expedite_delivery_system_front_page_feature(); ?>
-
 	<div id="content" class="site-content">
+		<?php
+		if ( is_front_page() ) {
+			expedite_delivery_system_front_page_feature();
+		} else {
+			expedite_delivery_system_page_feature();
+		}
+		?>
