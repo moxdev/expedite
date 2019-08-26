@@ -16,11 +16,12 @@
 }
 
 .main-content-wrapper {
+  position: relative;
+  z-index: 100;
   max-width: $max_content_width;
-  margin-left: auto;
-  margin-right: auto;
+  @include margin-auto;
   @include padding-left-right;
-  @include section-padding(2);
+  @include section-padding(1,2);
   text-align: left;
 }
 
@@ -32,3 +33,27 @@
   @include section-padding(2);
   text-align: center;
 }
+
+// #primary {
+//   position: relative;
+//   z-index: 9999999;
+
+//   &:before {
+//     content: '';
+//     background-image: url('imgs/white-up-lg-test.svg');
+//     background-size: 100% auto;
+//     background-position: 0 0;
+//     background-repeat: no-repeat;
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     top: -2%;
+//     left: 0;
+//     right: 0;
+//     z-index: -1;
+
+//     // @include respond-to('550') {
+//     //   height: 10%;
+//     // }
+//   }
+// }

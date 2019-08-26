@@ -1,11 +1,11 @@
 #masthead {
 	position: relative;
+	z-index: 100;
 
 	.aux-nav-menu-toggle-container {
 		position: relative;
 		background: $color__brand-1;
-		padding-top: 1rem;
-		padding-bottom: 1rem;
+		@include section-padding(1,0);
 		@include padding-left-right;
 
 		.aux-container {
