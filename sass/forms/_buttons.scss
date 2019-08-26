@@ -4,7 +4,10 @@ input[type="reset"],
 input[type="submit"] {
 	display: inline-block;
 	background: $color__background-button;
-	padding: 1.4375em 2.1875em 1.4375em;
+	padding-top: 1.4375em;
+	padding-bottom: 1.4375em;
+	padding-left: 2.1875em;
+	padding-right: 2.7875em;
 	border: 1px solid $color__border-button;
 	border-radius: 5px;
 	color: $color__brand-1;

@@ -72,7 +72,7 @@ if ( ! function_exists( 'expedite_delivery_system_front_page_callout' ) ) :
 								$link_title  = $co_button['title'];
 								$link_target = $co_button['target'] ? $co_button['target'] : '_self';
 								?>
-								<a class="btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?>&nbsp;<span>&raquo;</span></a>
+								<a class="btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 								<?php
 							endif;
 							?>

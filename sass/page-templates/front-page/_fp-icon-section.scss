@@ -6,6 +6,10 @@
 	@include font-smooth;
 	position: relative;
 
+	.content-wrapper {
+		@include section-padding(4);
+	}
+
 	h2.section-title {
 		color: $color__brand-2;
 	}

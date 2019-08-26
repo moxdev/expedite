@@ -2,11 +2,16 @@
 	position: relative;
 	background-color: $color__brand-2;
 	@include font-smooth;
+	min-height: 22.8125rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
 
 	&:before {
 		content: '';
 		display: block;
-		background-image: url('imgs/blue-curve.svg');
+		background-image: url('imgs/blue-curve-down-lg.svg');
 		background-size: 100% auto;
 		background-position: 0 0;
 		background-repeat: no-repeat;
@@ -17,10 +22,6 @@
 		left: 0;
 		right: 0;
 		z-index: 1;
-
-		@include respond-to('550') {
-			// height: 10%;
-		}
 	}
 
 	&:after {
@@ -28,32 +29,60 @@
 		display: block;
 		background-image: url('imgs/white-up-lg-test.svg');
 		background-size: 100% auto;
-		background-position: 0 105%;
+		background-position: 0 100%;
 		background-repeat: no-repeat;
 		width: 100%;
 		height: 100%;
 		position: absolute;
-		bottom: 0;
+		bottom: -2px;
 		left: 0;
 		right: 0;
 		z-index: 1;
 
-		@include respond-to('550') {
-			// height: 10%;
-		}
 	}
 
 	.content-wrapper {
 		position: relative;
-		@include section-padding(6, 4);
+		z-index: 10;
+		@include section-padding(2, 6);
+
+		// &:before {
+		// 	content: '';
+		// 	background-image: url('imgs/app-mockup.png');
+		// 	background-size: contain;
+		// 	background-position: 0 0;
+		// 	background-repeat: no-repeat;
+		// 	width: 165px;
+		// 	height: 100%;
+		// 	position: absolute;
+		// 	top: 0;
+		// 	left: 50%;
+		// 	transform: translate(-50%, 0);
+		// 	right: 0;
+		// 	z-index: 1;
+
+		// 	@include respond-to('950') {
+		// 		width: 230px
+		// 	}
+		// }
+
+		figure {
+			margin: 0;
+			position: relative;
+			margin-top: -4rem;
+			padding-bottom: 1rem;
+			// display: none;
+		}
 
 		img {
-			position: absolute;
-			top: -10px;
-			left: 50%;
-			transform: translate(-50%, 0);
+			// position: absolute;
+			// top: -2rem;
+			// left: 50%;
+			// transform: translate(-50%, 0);
 			width: 165px;
-			z-index: 100;
+			display: block;
+			@include margin-auto;
+
 
 			@include respond-to('950') {
 				width: 230px

@@ -5,12 +5,12 @@
 		text-align: center;
 
 		h2 {
-			@extend h3;
-			text-transform: capitalize;
+			@extend h3.section-sub-title;
 		}
 	}
 
 	@import 'fp-icon-section';
 	@import 'fp-mobile-app-callout-section';
+	@import 'fp-callout-section';
 	@import 'fp-testimonial-section';
 }

@@ -71,18 +71,22 @@
 		.flickity-prev-next-button {
 			top: auto;
 			bottom: 0;
+			padding: 1.25rem 1.5rem;
+
 			transform: translateY(0);
 			border-radius: 5px;
 			background: transparent;
 			border: 1px solid $color__border-button-alt;
 			color: $color__border-button-alt;
 
-			.previous {
-
+			&.previous {
+				left: 20%;
+				// transform: translate(-50%, 0);
 			}
 
-			.next {
-
+			&.next {
+				right: 20%;
+				// transform: translate(-50%, 0);
 			}
 		}
 	}

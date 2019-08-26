@@ -124,7 +124,7 @@ if ( ! function_exists( 'expedite_delivery_system_icon_section' ) ) :
 							$link_title  = $icon_button['title'];
 							$link_target = $icon_button['target'] ? $icon_button['target'] : '_self';
 							?>
-							<a class="btn-alt" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?>&nbsp;<span>&raquo;</span></a>
+							<a class="btn-alt" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 							<?php
 						endif;
 						?>
