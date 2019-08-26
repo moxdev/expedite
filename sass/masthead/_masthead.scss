@@ -5,7 +5,7 @@
 	.aux-nav-menu-toggle-container {
 		position: relative;
 		background: $color__brand-1;
-		@include section-padding(1,0);
+		@include section-padding(1);
 		@include padding-left-right;
 
 		.aux-container {
@@ -47,24 +47,39 @@
 
 	.site-branding {
 		position: relative;
+		padding-left: 1.5rem;
+
+		@include respond-to('750') {
+			padding-left: 2.5rem;
+		}
+
+		@include respond-to('950') {
+			padding-top: 1rem;
+		}
 	}
 
 	.custom-logo-link {
-		position: absolute;
-		top: -2.5rem;
-		left: 1.5rem;
-		z-index: 200;
+		// position: absolute;
+		// top: -2.5rem;
+		// left: 0;
+		// z-index: 200;
+		margin-top: -2.5rem;
 
 		@include respond-to('370') {
-			top: -3rem;
+			margin-top: -3rem;
 		}
 	}
 
 	.custom-logo {
-		width: 10.9375rem;
+		width: 10.9375rem;  // 175px
+		// width: 12.5rem;
 
 		@include respond-to('370') {
-			width: 13.125rem;
+			width: 13.125rem;  // 210px
+		}
+
+		@include respond-to('1150') {
+			width: 14.0625rem;  // 225px
 		}
 	}
 }
