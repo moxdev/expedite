@@ -11,26 +11,30 @@
 
 	&:before {
 		content: '';
-		background-image: url('imgs/curve-top-xl.svg');
-		// background-repeat: no-repeat;
-		// background-size: contain;
+		background-image: url('imgs/white-curve-down-sm.svg');
 		width: 100%;
 		height: 100%;
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
-		// margin-left: -2.5rem;
-		// margin-right: -2.5rem;
 		z-index: 10;
-		background-size: 100% auto;
+		background-size: contain;
 		background-position: 0 0;
 		background-repeat: no-repeat;
+
+		@include respond-to('450') {
+			background-image: url('imgs/white-curve-down-lg.svg');
+		}
+
+		@include respond-to('750') {
+			background-image: url('imgs/white-curve-down.svg');
+		}
 	}
 
 	&:after {
 		content: '';
-		background-image: url('imgs/side-cut-off.svg');
+		background-image: url('imgs/white-curve-up.svg');
 		background-size: 100% auto;
 		background-position: 0 0;
 		background-repeat: no-repeat;
@@ -41,9 +45,11 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		// margin-left: -2.5rem;
-		// margin-right: -2.5rem;
 		z-index: 10;
+
+		@include respond-to('550') {
+			height: 10%;
+		}
 	}
 
 

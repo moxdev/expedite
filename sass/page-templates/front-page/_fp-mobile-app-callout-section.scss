@@ -1,16 +1,59 @@
 #front-page-mobile-app {
+	position: relative;
 	background-color: $color__brand-2;
 	@include font-smooth;
 
+	&:before {
+		content: '';
+		display: block;
+		background-image: url('imgs/blue-curve.svg');
+		background-size: 100% auto;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+
+		@include respond-to('550') {
+			// height: 10%;
+		}
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		background-image: url('imgs/white-curve-up.svg');
+		background-size: 100% auto;
+		background-position: 0 105%;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+
+		@include respond-to('550') {
+			// height: 10%;
+		}
+	}
+
 	.content-wrapper {
 		position: relative;
+		@include section-padding(6, 4);
 
 		img {
 			position: absolute;
-			top: -13%;
+			top: -10px;
 			left: 50%;
 			transform: translate(-50%, 0);
 			width: 165px;
+			z-index: 100;
 
 			@include respond-to('950') {
 				width: 230px
