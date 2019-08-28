@@ -4,12 +4,14 @@ html {
 
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	box-sizing: inherit;
 }
 
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	background: $color__background-body;
+	/* Fallback for when there is no custom background color defined. */
 }
 
 hr {
@@ -22,44 +24,105 @@ hr {
 @import "lists";
 
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
 }
 
 figure {
-	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
 }
 
 .page-feature {
-	margin: 0;
 	color: #fff;
 	width: 100%;
 	height: 100%;
 	position: relative;
-	z-index: 0;
-	@include padding-left-right;
-	padding-top: 3em;
-	padding-bottom: 3em;
-	overflow: hidden;
+	z-index: 1;
+
+	&:before {
+		content: '';
+		background-image: url('imgs/white-curve-down-lg.svg');
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		background-size: 100% auto;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+	}
 
 	&:after {
 		content: '';
+		background-image: url('imgs/white-curve-up-lg.svg');
+		background-size: 100% auto;
+		background-position: 0 100%;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100%;
 		position: absolute;
-		top: 0;
-		bottom: 0;
+		bottom: -2px;
 		left: 0;
 		right: 0;
-		z-index: -1;
-		background: rgba(0,0,0,0.2);
+		z-index: 10;
+	}
+
+	.feature-container {
+		position: relative;
+		// z-index: 200;
+
+		&:before {
+			content: '';
+			background-image: url('imgs/icon-free-consultation.svg');
+			width: 86px;
+			height: 100%;
+			position: absolute;
+			bottom: -1rem;
+			right: 1.5rem;
+			z-index: 200;
+			background-size: 100% auto;
+			background-position: 0 100%;
+			background-repeat: no-repeat;
+
+			@include respond-to('950') {
+				width: 150px;
+			}
+		}
+	}
+
+	figure {
+		margin: 0;
+		position: relative;
+		z-index: 1;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 1;
+			background: rgba(0, 0, 0, 0.2);
+		}
 	}
 
 	figcaption {
 		position: relative;
-		z-index: 5;
+		z-index: 10;
 		font-size: 2rem;
 		font-family: $font__black;
 		text-transform: uppercase;
 		text-align: right;
+		padding-top: 1.75em;
+		padding-bottom: 1.75em;
+		@include padding-left-right;
+		// @include test(red);
 	}
 
 	img {

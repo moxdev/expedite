@@ -15,14 +15,18 @@ if ( ! function_exists( 'expedite_delivery_system_page_feature' ) ) :
 			$img_alt   = get_post_meta( $img_id, '_wp_attachment_image_alt', true );
 			$img_title = get_the_title( $img_id ) ? get_the_title( $img_id ) : $img_alt;
 			?>
-			<figure class="page-feature">
+			<div class="page-feature">
+				<div class="feature-container">
+					<figure>
 
-				<?php the_post_thumbnail( 'post-thumbnail', [ 'title' => $img_title ] ); ?>
+						<?php the_post_thumbnail( 'post-thumbnail', [ 'title' => $img_title ] ); ?>
 
-				<figcaption>
-					<?php the_title(); ?>
-				</figcaption>
-			</figure>
+						<figcaption>
+							<?php the_title(); ?>
+						</figcaption>
+					</figure>
+				</div>
+			</div>
 			<?php
 			wp_enqueue_script( 'expedite-delivery-system-object-fit-library', get_template_directory_uri() . '/js/vendor/ofi.min.js', array(), '20190415', true );
 			add_action( 'wp_footer', 'expedite_delivery_system_object_fit_js', 100 );

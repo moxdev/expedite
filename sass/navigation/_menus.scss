@@ -384,8 +384,10 @@
 
     &:hover,
     &:focus {
-      background-color: lighten(green, 20%);
-      border-color: green;
+      background-color: darken($color__brand-3, 10%);
+      // background-color: $color__brand-3;
+      // border-color: $color__brand-1;
+			color: #000;
     }
   }
 
