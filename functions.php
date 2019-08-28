@@ -50,6 +50,8 @@ if ( ! function_exists( 'expedite_delivery_system_setup' ) ) :
 
 		add_image_size( 'icon-cards', 298, 9999, false );
 
+		add_image_size( 'rapidshare', 1000, 9999, false );
+
 		add_image_size( 'icon-mobile-app', 236, 9999, false );
 		add_image_size( 'icon-industries', 380, 9999, false );
 		add_image_size( 'icon-global-callout', 600, 9999, false );
@@ -426,3 +428,8 @@ require get_template_directory() . '/inc/components/global-callout-section.php';
  * Our Team Section.
  */
 require get_template_directory() . '/inc/components/our-team-section.php';
+
+/**
+ * Rapidshare Web App Section.
+ */
+require get_template_directory() . '/inc/components/rapidshare-section.php';

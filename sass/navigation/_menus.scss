@@ -364,6 +364,10 @@
   margin: 0 0 3rem;
   padding: 0;
 
+	@include respond-to('950') {
+		justify-content: flex-end;
+	}
+
   li {
     margin-right: 0.25rem;
 

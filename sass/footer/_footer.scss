@@ -2,13 +2,31 @@
 	background: $color__brand-1;
 	color: #fff;
 	border-top: 5px solid $color__brand-2;
+	text-align: center;
+
+	.site-info {
+		@include padding-left-right;
+		@include section-padding(2);
+
+		@include respond-to('950') {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
 
 	.col-left {
 		margin-bottom: 1.5rem;
 	}
 
+	.col-right {
+
+		@include respond-to('950') {
+			text-align: right;
+		}
+	}
+
 	.custom-logo-link {
-		width: 178px;
+		width: 175px;
 		margin-bottom: 1rem;
 	}
 
@@ -19,6 +37,10 @@
 		span {
 			display: block;
 			margin-bottom: .5rem;
+
+			@include respond-to('950') {
+				display: inline-block;
+			}
 		}
 
 		a {

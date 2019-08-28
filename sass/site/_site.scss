@@ -48,7 +48,7 @@
   ol {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    // padding: 0;
 
     li {
       counter-increment: list;
@@ -90,4 +90,15 @@
   @include padding-left-right;
   @include section-padding(2);
   text-align: center;
+}
+
+.mejs-container, .mejs-container .mejs-controls, .mejs-embed, .mejs-embed body {
+  background: $color__brand-1 !important;
+  border-left: 1px solid $color__brand-1;
+  border-right: 1px solid $color__brand-1;
+  border-top: 1px solid $color__brand-1;
+  // border-left: 1px solid #efefef;
+  // border-right: 1px solid #efefef;
+  // border-top: 1px solid #efefef;
+  // margin-top: -2px;
 }

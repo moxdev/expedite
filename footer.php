@@ -22,7 +22,7 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info content-wrapper">
+		<div class="site-info">
 			<div class="col-left">
 				<?php
 				if ( has_nav_menu( 'menu-ftr' ) ) :

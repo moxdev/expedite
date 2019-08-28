@@ -1,0 +1,50 @@
+.page-template-page-rapidshare {
+
+	#rapidshare {
+		max-width: 1200px;
+		@include margin-auto;
+
+		@include respond-to('950') {
+			display: flex;
+		}
+
+		.col-left {
+
+			@include respond-to('950') {
+				flex: 1;
+			}
+		}
+
+		.col-right {
+
+			@include respond-to('950') {
+				flex: 2;
+			}
+		}
+
+		h2 {
+			color: $color__brand-1;
+			font-size: 19px;
+			line-height: 1.3;
+		}
+
+		h3 {
+			color: $color__brand-1;
+			font-size: 22px;
+			margin-bottom: .25rem;
+		}
+
+		ol {
+			li {
+
+				@include respond-to('950') {
+					margin-bottom: .25rem;
+				}
+			}
+		}
+
+		figure {
+			margin: 1.5rem 0;
+		}
+	}
+}
