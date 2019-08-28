@@ -1,7 +1,10 @@
-#front-page-mobile-app {
+.front-page-mobile-app {
 	position: relative;
 	background-color: $color__brand-2;
 	@include font-smooth;
+	// width: 100px;
+	// height: 100px;
+	height: 600px;
 	min-height: 22.8125rem;
 	display: flex;
 	flex-direction: column;
@@ -41,47 +44,37 @@
 
 	}
 
+	.top-curve,
+	.bottom-curve {
+		display: block;
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+	}
+
 	.content-wrapper {
 		position: relative;
 		z-index: 10;
 		@include section-padding(2, 6);
 
-		// &:before {
-		// 	content: '';
-		// 	background-image: url('imgs/app-mockup.png');
-		// 	background-size: contain;
-		// 	background-position: 0 0;
-		// 	background-repeat: no-repeat;
-		// 	width: 165px;
-		// 	height: 100%;
-		// 	position: absolute;
-		// 	top: 0;
-		// 	left: 50%;
-		// 	transform: translate(-50%, 0);
-		// 	right: 0;
-		// 	z-index: 1;
-
-		// 	@include respond-to('950') {
-		// 		width: 230px
-		// 	}
-		// }
-
 		figure {
 			margin: 0;
-			position: relative;
-			margin-top: -4rem;
-			padding-bottom: 1rem;
+			margin-top: 0;
+			// width: 100px;
+			// height: 100px;
+			// position: absolute;
+			// top: 0;
+			// left: 50%;
+			// transform: translate(-50%, 0);
 			// display: none;
 		}
 
 		img {
-			// position: absolute;
-			// top: -2rem;
-			// left: 50%;
-			// transform: translate(-50%, 0);
+
 			width: 165px;
-			display: block;
-			@include margin-auto;
+			// display: block;
+			// @include margin-auto;
 
 
 			@include respond-to('950') {
