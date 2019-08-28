@@ -72,44 +72,53 @@ if ( ! function_exists( 'expedite_delivery_system_icon_section' ) ) :
 											$icon_card_description = get_sub_field( 'icon_card_description' );
 											?>
 											<div class="icon-card">
-												<?php
-												if ( $icon_card_page_link ) :
-													$link_url    = $icon_card_page_link['url'];
-													$link_target = $icon_card_page_link['target'] ? $icon_card_page_link['target'] : '_self';
-													?>
-													<a class="page-link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
-														<?php
-														if ( $icon_card_image ) :
-															$icon_card_image_title = $icon_card_image['title'] ? $icon_card_image['title'] : $icon_card_image['alt'];
-															?>
-															<img src="<?php echo esc_url( $icon_card_image['sizes']['icon-cards'] ); ?>" alt="<?php echo esc_attr( $icon_card_image['alt'] ); ?>" title="<?php echo esc_attr( $icon_card_image_title ); ?>"/>
-															<?php
-														endif;
+												<div class="icon-card-inner-wrapper">
+													<?php
+													if ( $icon_card_page_link ) :
+														$link_url    = $icon_card_page_link['url'];
+														$link_target = $icon_card_page_link['target'] ? $icon_card_page_link['target'] : '_self';
 														?>
-													</a>
-													<?php
-												endif;
-												?>
+														<a class="page-link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+															<?php
+															if ( $icon_card_image ) :
+																$icon_card_image_title = $icon_card_image['title'] ? $icon_card_image['title'] : $icon_card_image['alt'];
+																?>
+																<img src="<?php echo esc_url( $icon_card_image['sizes']['icon-cards'] ); ?>" alt="<?php echo esc_attr( $icon_card_image['alt'] ); ?>" title="<?php echo esc_attr( $icon_card_image_title ); ?>"/>
+																<?php
+															endif;
+															?>
+														</a>
+														<?php
+													endif;
 
-												<h2 class="card-title">
-													<?php
-													echo wp_kses(
-														$icon_card_title,
-														array(
-															'span'   => array(),
-															'em'     => array(),
-															'strong' => array(),
-															'br'     => array(),
-														)
-													);
+													if ( $icon_card_title ) :
+														?>
+														<h2 class="card-title">
+															<?php
+															echo wp_kses(
+																$icon_card_title,
+																array(
+																	'span'   => array(),
+																	'em'     => array(),
+																	'strong' => array(),
+																	'br'     => array(),
+																)
+															);
+															?>
+														</h2>
+														<?php
+													endif;
+
+													if ( $icon_card_description ) :
+														?>
+														<div class="card-desc">
+															<?php echo wp_kses_post( $icon_card_description ); ?>
+														</div>
+														<?php
+													endif;
 													?>
-												</h2>
-
-												<div class="card-desc">
-													<?php echo wp_kses_post( $icon_card_description ); ?>
-												</div>
-
-											</div>
+												</div><!-- .icon-card-inner-wrapper -->
+											</div><!-- .icon-card -->
 											<?php
 										endwhile;
 										?>
@@ -128,7 +137,7 @@ if ( ! function_exists( 'expedite_delivery_system_icon_section' ) ) :
 							<?php
 						endif;
 						?>
-					</div>
+					</div><!-- .content-wrapper -->
 				</section>
 				<?php
 			endif;

@@ -20,10 +20,10 @@ input[type="submit"] {
 	-webkit-appearance: none;
 	transition: background 0.25s;
 
-	@include respond-to('1150') {
-		@include font-size(1);
-		padding: 0.8rem 1.75rem 0.9rem;
-	}
+	// @include respond-to('1150') {
+	// 	@include font-size(1);
+	// 	padding: 0.8rem 1.75rem 0.9rem;
+	// }
 
 	&:hover,
 	&:active,
@@ -99,4 +99,10 @@ input[type="submit"] {
 		background-color: $color__brand-2;
 		color: #fff;
 	}
+}
+
+.btn-alt-yellow {
+	@extend .btn;
+	background: $color__brand-2;
+	margin-bottom: 1.5rem;
 }

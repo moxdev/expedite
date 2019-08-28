@@ -7,51 +7,40 @@
 
 if ( ! function_exists( 'expedite_delivery_system_industries_icon_section' ) ) :
 	/**
-	 * Outputs the icon cards section
+ * Outputs the indutries section with Icon, Title, Description
 	 */
 	function expedite_delivery_system_industries_icon_section() {
 		if ( have_rows( 'ind_icon_cards' ) ) :
 			?>
-			<div class="industries-icon-container">
+			<section id="industries">
 				<?php
 				while ( have_rows( 'ind_icon_cards' ) ) :
 					the_row();
-					$ind_icon_card_image       = get_sub_field( 'ind_icon_card_image' );
-					$ind_icon_card_page_link   = get_sub_field( 'ind_icon_card_page_link' );
-					$ind_icon_card_title       = get_sub_field( 'ind_icon_card_title' );
-					$ind_icon_card_description = get_sub_field( 'ind_icon_card_description' );
+					$ind_icon_image       = get_sub_field( 'ind_icon_card_image' );
+					$ind_icon_title       = get_sub_field( 'ind_icon_card_title' );
+					$ind_icon_description = get_sub_field( 'ind_icon_card_description' );
 					?>
-					<div class="industry-icon-card">
+					<div class="industry">
 						<?php
-						if ( $ind_icon_card_page_link ) :
-							$link_url    = $ind_icon_card_page_link['url'];
-							$link_target = $ind_icon_card_page_link['target'] ? $ind_icon_card_page_link['target'] : '_self';
+						if ( $ind_icon_image ) :
+							$ind_icon_image_title = $ind_icon_image['title'] ? $ind_icon_image['title'] : $ind_icon_image['alt'];
 							?>
 							<div class="col-left">
-								<a class="page-link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
-									<?php
-									if ( $ind_icon_card_image ) :
-										$ind_icon_card_image_title = $ind_icon_card_image['title'] ? $ind_icon_card_image['title'] : $ind_icon_card_image['alt'];
-										?>
-										<img src="<?php echo esc_url( $ind_icon_card_image['sizes']['icon-industries'] ); ?>" alt="<?php echo esc_attr( $ind_icon_card_image['alt'] ); ?>" title="<?php echo esc_attr( $ind_icon_card_image_title ); ?>"/>
-										<?php
-									endif;
-									?>
-								</a>
+								<img src="<?php echo esc_url( $ind_icon_image['sizes']['icon-industries'] ); ?>" alt="<?php echo esc_attr( $ind_icon_image['alt'] ); ?>" title="<?php echo esc_attr( $ind_icon_image_title ); ?>"/>
 							</div>
 							<?php
 						endif;
 
-						if ( $ind_icon_card_title || $ind_icon_card_description ) :
+						if ( $ind_icon_title || $ind_icon_description ) :
 							?>
 							<div class="col-right">
 								<?php
-								if ( $ind_icon_card_title ) :
+								if ( $ind_icon_title ) :
 									?>
-									<h2 class="industry-card-title">
+									<h2 class="industry-title">
 										<?php
 										echo wp_kses(
-											$ind_icon_card_title,
+											$ind_icon_title,
 											array(
 												'span'   => array(),
 												'em'     => array(),
@@ -64,10 +53,10 @@ if ( ! function_exists( 'expedite_delivery_system_industries_icon_section' ) ) :
 									<?php
 								endif;
 
-								if ( $ind_icon_card_description ) :
+								if ( $ind_icon_description ) :
 									?>
-									<div class="industry-card-desc">
-										<?php echo wp_kses_post( $ind_icon_card_description ); ?>
+									<div class="industry-desc">
+										<?php echo wp_kses_post( $ind_icon_description ); ?>
 									</div>
 									<?php
 								endif;
@@ -76,11 +65,11 @@ if ( ! function_exists( 'expedite_delivery_system_industries_icon_section' ) ) :
 							<?php
 						endif;
 						?>
-					</div><!-- .industry-icon-card -->
+					</div><!-- .industry -->
 					<?php
 				endwhile;
 				?>
-			</div><!-- .industries-icon-container -->
+			</section><!-- #industries -->
 			<?php
 		endif;
 	}

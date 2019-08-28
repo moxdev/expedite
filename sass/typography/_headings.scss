@@ -13,7 +13,7 @@ h1.entry-title {
 
 h2.section-title {
 	@extend h1.entry-title;
-	line-height: 1.3;
+	line-height: 1.1;
 }
 
 h2.section-sub-title {
@@ -21,14 +21,7 @@ h2.section-sub-title {
 	font-size: 1.375rem;
 	color: $color__brand-1;
 	margin: 0 0 1.5rem;
-	line-height: 1.3;
-}
-
-h2.industry-card-title {
-	font-size: 1.375rem;
-	font-family: $font__med;
-	margin: 0 0 1rem;
-	color: $color__brand-1;
+	line-height: 1.2;
 }
 
 h3.section-sub-title {
@@ -36,5 +29,29 @@ h3.section-sub-title {
 	font-size: 1.188rem;
 	color: $color__brand-1;
 	margin: 0 0 1.5rem;
-	line-height: 1.3;
+	line-height: 1.2;
+}
+
+h2.industry-title {
+	font-size: 1.375rem;
+	font-family: $font__med;
+	margin: 0 0 1rem;
+	color: $color__brand-1;
+	line-height: 1.1;
+}
+
+h2.team-member-name {
+	font-size: 1.375rem;
+	font-family: $font__med;
+	margin: 0 0 1rem;
+	color: $color__brand-1;
+	line-height: 1.1;
+}
+
+h3.team-member-title {
+	font-family: $font__med;
+	font-size: 1.188rem;
+	color: $color__brand-1;
+	margin: 0 0 0.625rem;
+	line-height: 1.2;
 }

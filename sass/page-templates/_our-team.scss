@@ -1,0 +1,38 @@
+.page-template-page-our-team {
+
+	#our-team {
+		@include section-padding(2);
+
+		.team-member {
+			margin-bottom: 2.5rem;
+
+			@include respond-to('750') {
+				display: flex;
+				justify-content: center;
+			}
+
+			.col-left {
+				margin: 0 0 1.5rem;
+
+				@include respond-to('750') {
+					flex: 1 0 auto;
+					margin-right: 2rem;
+				}
+			}
+
+			.col-right {
+
+				@include respond-to('750') {
+					flex: 1 1 auto;
+				}
+			}
+
+			.headshot {
+
+				@include respond-to('750') {
+					width: 200px;
+				}
+			}
+		}
+	}
+}

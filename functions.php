@@ -46,6 +46,8 @@ if ( ! function_exists( 'expedite_delivery_system_setup' ) ) :
 		add_image_size( 'home-testimonial-lg', 1500, 1000, true );
 		add_image_size( 'home-testimonial-xl', 2200, 1467, true );
 
+		add_image_size( 'team-member', 300, 300, true );
+
 		add_image_size( 'icon-cards', 298, 9999, false );
 
 		add_image_size( 'icon-mobile-app', 236, 9999, false );
@@ -303,9 +305,9 @@ function three_tree_flats_admin_styles( $init_array ) {
 			'classes'  => 'dual-column',
 		),
 		array(
-			'title'    => 'Button',
+			'title'    => 'Button Yellow',
 			'selector' => 'a',
-			'classes'  => 'btn',
+			'classes'  => 'btn-alt-yellow',
 		),
 	);
 	$init_array['style_formats'] = wp_json_encode( $style_formats );

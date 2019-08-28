@@ -43,14 +43,21 @@
 	.branding-desktop-nav-container {
 		background-color: #fff;
 		position: relative;
+		@include padding-left-right;
+
+		@include respond-to('950') {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
 	}
 
 	.site-branding {
 		position: relative;
-		padding-left: 1.5rem;
+		// padding-left: 1.5rem;
 
 		@include respond-to('750') {
-			padding-left: 2.5rem;
+			// padding-left: 2.5rem;
 		}
 
 		@include respond-to('950') {
@@ -67,6 +74,10 @@
 
 		@include respond-to('370') {
 			margin-top: -3rem;
+		}
+
+		@include respond-to('370') {
+			margin-top: -4rem;
 		}
 	}
 

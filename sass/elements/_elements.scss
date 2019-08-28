@@ -121,6 +121,7 @@ figure {
 		text-align: right;
 		padding-top: 1.75em;
 		padding-bottom: 1.75em;
+		line-height: 1;
 		@include padding-left-right;
 		// @include test(red);
 	}

@@ -19,9 +19,53 @@
 	}
 
 	.icon-container {
+		padding-top: 1rem;
+
+		@include respond-to('600') {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+
+		@include respond-to('1150') {
+			margin-left: -3rem;
+			margin-right: -3rem;
+		}
+		.icon-card {
+			margin-bottom: 2.5rem;
+
+			@include respond-to('600') {
+				flex: 1 1 50%;
+				margin-bottom: 2rem;
+			}
+
+			@include respond-to('1150') {
+				flex: 1 1 25%;
+			}
+
+			&:last-child {
+				.icon-card-inner-wrapper {
+
+					@include respond-to('1150') {
+						// padding-right: 0;
+					}
+				}
+			}
+		}
+
+		.icon-card-inner-wrapper {
+
+			@include respond-to('950') {
+				padding: 0 2rem;
+			}
+
+			@include respond-to('1150') {
+				padding: 0 1.5rem;
+			}
+		}
 
 		img {
-			width: 12.5rem;
+			width: 12.5rem;  // 200px
 
 			// &:hover {
 			// 	-webkit-filter: grayscale(50%) brightness(120%) sepia(100%) hue-rotate(5deg) saturate(500%) contrast(0.7);

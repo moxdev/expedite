@@ -14,7 +14,7 @@
 	if ( function_exists( 'get_field' ) ) :
 		$show_global_callout = get_field( 'show_global_callout' );
 
-		if ( $show_global_callout ) :
+		if ( $show_global_callout && ! is_front_page() ) :
 			expedite_delivery_system_front_page_global_callout();
 		endif;
 	endif;

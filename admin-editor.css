@@ -1,4 +1,11 @@
 .section-sub-title {
-	font-size: 1.188rem;
+	font-size: 1.375rem;
 	color: #092f8c;
+}
+
+.btn-alt-yellow {
+	padding: 0.5675em 1.5em 0.5em;
+	border: 2px dotted #092f8c;
+	background: #f9ce36;
+	border-radius: 10px;
 }
