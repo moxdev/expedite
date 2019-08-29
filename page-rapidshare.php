@@ -30,9 +30,6 @@ get_header();
 				?>
 			</div>
 		</main><!-- #main -->
-
-		<?php expedite_delivery_system_rapidshare_section(); ?>
-
 	</div><!-- #primary -->
 
 <?php

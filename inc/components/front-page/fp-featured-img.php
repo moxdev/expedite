@@ -31,55 +31,56 @@ if ( ! function_exists( 'expedite_delivery_system_front_page_feature' ) ) :
 					<?php
 					if ( $hero ) :
 						?>
-						<div class="hero-content">
-
-							<?php
-							if ( $title ) :
-								?>
-								<span class="hero-title">
-									<?php
-									echo wp_kses(
-										$title,
-										array(
-											'span'   => array(),
-											'em'     => array(),
-											'strong' => array(),
-											'br'     => array(),
-										)
-									);
+						<div class="hero-content-container">
+							<div class="hero-content">
+								<?php
+								if ( $title ) :
 									?>
-								</span>
-								<?php
-							endif;
-
-							if ( $sub_title ) :
-								?>
-								<span class="hero-sub-title">
+									<span class="hero-title">
+										<?php
+										echo wp_kses(
+											$title,
+											array(
+												'span'   => array(),
+												'em'     => array(),
+												'strong' => array(),
+												'br'     => array(),
+											)
+										);
+										?>
+									</span>
 									<?php
-									echo wp_kses(
-										$sub_title,
-										array(
-											'span'   => array(),
-											'em'     => array(),
-											'strong' => array(),
-											'br'     => array(),
-										)
-									);
-									?>
-								</span>
-								<?php
-							endif;
+								endif;
 
-							if ( $button ) :
-								$link_url    = $button['url'];
-								$link_title  = $button['title'];
-								$link_target = $button['target'] ? $button['target'] : '_self';
+								if ( $sub_title ) :
+									?>
+									<span class="hero-sub-title">
+										<?php
+										echo wp_kses(
+											$sub_title,
+											array(
+												'span'   => array(),
+												'em'     => array(),
+												'strong' => array(),
+												'br'     => array(),
+											)
+										);
+										?>
+									</span>
+									<?php
+								endif;
+
+								if ( $button ) :
+									$link_url    = $button['url'];
+									$link_title  = $button['title'];
+									$link_target = $button['target'] ? $button['target'] : '_self';
+									?>
+									<a class="btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+									<?php
+								endif;
 								?>
-								<a class="btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-								<?php
-							endif;
-							?>
-						</div><!-- .hero-content -->
+							</div><!-- .hero-content -->
+						</div>
 						<?php
 					endif;
 					?>

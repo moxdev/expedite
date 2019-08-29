@@ -92,47 +92,48 @@
 		?>
 
 		<div class="branding-desktop-nav-container">
-			<div class="site-branding">
-				<?php
-				the_custom_logo();
-				if ( is_front_page() && is_home() ) :
-					?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<div class="inner-wrapper">
+				<div class="site-branding">
 					<?php
-				else :
-					?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php
-				endif;
-				$expedite_delivery_system_description = get_bloginfo( 'description', 'display' );
-				if ( $expedite_delivery_system_description || is_customize_preview() ) :
-					?>
-					<p class="site-description"><?php echo $expedite_delivery_system_description; /* WPCS: xss ok. */ ?></p>
-					<?php
-				endif;
-				?>
-			</div><!-- .site-branding -->
-
-			<?php
-			if ( has_nav_menu( 'menu-main' ) ) :
-				?>
-				<div class="desktop-navigation">
-					<nav class="site-navigation">
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'menu-main',
-								'menu_id'        => 'desktop-menu',
-								'container'      => '',
-							)
-						);
+					the_custom_logo();
+					if ( is_front_page() && is_home() ) :
 						?>
-					</nav><!-- .site-navigation -->
-				</div><!-- .desktop-navigation -->
-				<?php
-			endif;
-			?>
+						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php
+					else :
+						?>
+						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php
+					endif;
+					$expedite_delivery_system_description = get_bloginfo( 'description', 'display' );
+					if ( $expedite_delivery_system_description || is_customize_preview() ) :
+						?>
+						<p class="site-description"><?php echo $expedite_delivery_system_description; /* WPCS: xss ok. */ ?></p>
+						<?php
+					endif;
+					?>
+				</div><!-- .site-branding -->
 
+				<?php
+				if ( has_nav_menu( 'menu-main' ) ) :
+					?>
+					<div class="desktop-navigation">
+						<nav class="site-navigation">
+							<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'menu-main',
+									'menu_id'        => 'desktop-menu',
+									'container'      => '',
+								)
+							);
+							?>
+						</nav><!-- .site-navigation -->
+					</div><!-- .desktop-navigation -->
+					<?php
+				endif;
+				?>
+			</div>
 		</div>
 
 

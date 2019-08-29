@@ -5,6 +5,24 @@
 	// background-size: 15% auto;
 	@include font-smooth;
 	position: relative;
+	padding-bottom: 5rem;
+
+	&:after {
+		content: '';
+		display: block;
+		// background-image: url('imgs/blue-curve-down-lg.svg');
+		background-image: url('imgs/yellow-curve-transparent-top.svg');
+		background-size: 100% auto;
+		background-position: 0 100%;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		right: 0;
+		z-index: 500;
+	}
 
 	.content-wrapper {
 		@include section-padding(4);

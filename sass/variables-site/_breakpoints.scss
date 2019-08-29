@@ -11,6 +11,7 @@ $breakpoints: (
 	'1550': 96.875em, // 1550px
 	'1750': 109.375em, // 1750px
 	'1950': 121.875em, // 1950px
+	'2100': 131.25em, // 2100px
 	'2200': 137.5em, // 2200px
 	'2400': 150em, // 2400px
 );
@@ -29,5 +30,6 @@ $outer_spacing: (
 	'medium': 2.5
 );
 
-$max_content_width: 62.5rem; // 1000px
-$max_content_width-lg: 68.750em; // 1100px
+$max_content_width: 67.5em; // 1080px
+$max_content_width-lg: 73.75em; // 1180px
+$max_content_width-xlg: 80em; // 1280px

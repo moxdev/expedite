@@ -5,6 +5,8 @@
 	text-align: center;
 
 	.site-info {
+		width: $max_content_width-xlg;
+		@include margin-auto;
 		@include padding-left-right;
 		@include section-padding(2);
 

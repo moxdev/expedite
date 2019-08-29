@@ -17,12 +17,15 @@
 		<?php
 		the_content();
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'expedite_delivery_system' ),
-			'after'  => '</div>',
-		) );
-		?>
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'expedite_delivery_system' ),
+				'after'  => '</div>',
+			)
+		);
 
+		expedite_delivery_system_rapidshare_section();
+		?>
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>

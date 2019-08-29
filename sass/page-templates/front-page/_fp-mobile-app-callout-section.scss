@@ -4,27 +4,43 @@
 	@include font-smooth;
 	// width: 100px;
 	// height: 100px;
-	height: 600px;
-	min-height: 22.8125rem;
+	// height: 37.91069924178601vh;
+	// height: 400px;
+	// min-height: 28.125rem;  // 450px
+	min-height: 18.75rem;  // 300px
+	// min-height: 400px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
 
+	@include respond-to('550') {
+		// height: 33.69839932603201vh;
+	}
+
 	&:before {
 		content: '';
 		display: block;
-		background-image: url('imgs/blue-curve-down-lg.svg');
+		background-image: url('imgs/app-mockup.png');
 		background-size: 100% auto;
 		background-position: 0 0;
 		background-repeat: no-repeat;
-		width: 100%;
+		width: 12.5rem;  // 200px
 		height: 100%;
 		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 1;
+		top: -4.8375rem;
+		left: 50%;
+		transform: translate(-50%, 0);
+		z-index: 500;
+
+		@include respond-to('950') {
+			width: 15.625rem;  // 250px
+			top: -5.9375rem;
+		}
+
+		@include respond-to('1950') {
+			top: -6.9375rem;
+		}
 	}
 
 	&:after {
@@ -41,7 +57,6 @@
 		left: 0;
 		right: 0;
 		z-index: 1;
-
 	}
 
 	.top-curve,
@@ -54,9 +69,50 @@
 	}
 
 	.content-wrapper {
+		max-width: 51.25rem;
 		position: relative;
 		z-index: 10;
-		@include section-padding(2, 6);
+		@include section-padding(6);
+
+		@include respond-to('550') {
+			// @include section-padding(4);
+		}
+
+		@include respond-to('750') {
+			@include section-padding(5,6);
+		}
+
+		@include respond-to('950') {
+			@include section-padding(6,9);
+		}
+
+		@include respond-to('1350') {
+			padding-bottom: 10rem;
+		}
+
+		@include respond-to('1550') {
+			padding-bottom: 11rem;
+		}
+
+		@include respond-to('1750') {
+			padding-bottom: 12rem;
+		}
+
+		@include respond-to('1950') {
+			padding-top: 5rem;
+		}
+
+		@include respond-to('2100') {
+			padding-bottom: 13rem;
+		}
+
+		@include respond-to('2200') {
+			padding-bottom: 14rem;
+		}
+
+		@include respond-to('2400') {
+			padding-bottom: 15rem;
+		}
 
 		figure {
 			margin: 0;
@@ -72,13 +128,13 @@
 
 		img {
 
-			width: 165px;
+			width: 10.3125rem;  // 165px
 			// display: block;
 			// @include margin-auto;
 
 
 			@include respond-to('950') {
-				width: 230px
+				width: 14.375rem;
 			}
 		}
 	}

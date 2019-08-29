@@ -20,6 +20,60 @@
   z-index: 50;
 }
 
+#content {
+  background: #fff;
+}
+
+.main-content-wrapper {
+  position: relative;
+  z-index: 100;
+  max-width: $max_content_width;
+  @include margin-auto;
+  @include padding-left-right;
+  @include section-padding(2);
+  text-align: left;
+
+  @include respond-to('950') {
+    padding-top: 1rem;
+  }
+
+  @include respond-to('1150') {
+    padding-top: 0;
+  }
+
+  @include respond-to('1550') {
+    margin-top: -1rem;
+  }
+
+  @include respond-to('1950') {
+    margin-top: -2rem;
+  }
+
+  @include respond-to('2200') {
+    margin-top: -4rem;
+  }
+}
+
+.content-wrapper {
+  max-width: $max_content_width;
+  @include margin-auto;
+  @include padding-left-right;
+  @include section-padding(2);
+  text-align: center;
+}
+
+.mejs-container, .mejs-container .mejs-controls, .mejs-embed, .mejs-embed body {
+  background: $color__brand-1 !important;
+  border-left: 1px solid $color__brand-1;
+  border-right: 1px solid $color__brand-1;
+  border-top: 1px solid $color__brand-1;
+  // border-left: 1px solid #efefef;
+  // border-right: 1px solid #efefef;
+  // border-top: 1px solid #efefef;
+  // margin-top: -2px;
+}
+
+
 .hentry {
 
   ul {
@@ -55,7 +109,7 @@
       list-style-type: none;
       position: relative;
       padding-left: 1.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: .5rem;
 
       &:before {
         color: $color__brand-1;
@@ -67,38 +121,4 @@
     }
   }
 
-}
-
-#content {
-  background: #fff;
-}
-
-.main-content-wrapper {
-  position: relative;
-  z-index: 100;
-  max-width: $max_content_width;
-  @include margin-auto;
-  @include padding-left-right;
-  @include section-padding(2);
-  text-align: left;
-}
-
-.content-wrapper {
-  max-width: $max_content_width;
-  margin-left: auto;
-  margin-right: auto;
-  @include padding-left-right;
-  @include section-padding(2);
-  text-align: center;
-}
-
-.mejs-container, .mejs-container .mejs-controls, .mejs-embed, .mejs-embed body {
-  background: $color__brand-1 !important;
-  border-left: 1px solid $color__brand-1;
-  border-right: 1px solid $color__brand-1;
-  border-top: 1px solid $color__brand-1;
-  // border-left: 1px solid #efefef;
-  // border-right: 1px solid #efefef;
-  // border-top: 1px solid #efefef;
-  // margin-top: -2px;
 }

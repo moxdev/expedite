@@ -3,10 +3,16 @@
 	z-index: 100;
 
 	.aux-nav-menu-toggle-container {
+		max-width: $max_content_width-xlg;
+		@include margin-auto;
+		@include padding-left-right;
+		@include section-padding(1);
 		position: relative;
 		background: $color__brand-1;
-		@include section-padding(1);
-		@include padding-left-right;
+
+		@include respond-to('2200') {
+			// padding-bottom: .5rem;
+		}
 
 		.aux-container {
 			display: flex;
@@ -43,18 +49,26 @@
 	.branding-desktop-nav-container {
 		background-color: #fff;
 		position: relative;
-		@include padding-left-right;
+
+		padding-bottom: 3rem;
 
 		@include respond-to('950') {
-			display: flex;
-			justify-content: space-between;
-			align-items: flex-end;
+			padding-bottom: 0;
 		}
+
+		@include respond-to('2200') {
+			// display: inline;
+		}
+	}
+
+	.inner-wrapper {
+		max-width: $max_content_width-xlg;
+		@include margin-auto;
+		@include padding-left-right;
 	}
 
 	.site-branding {
 		position: relative;
-		// padding-left: 1.5rem;
 
 		@include respond-to('750') {
 			// padding-left: 2.5rem;
@@ -66,24 +80,23 @@
 	}
 
 	.custom-logo-link {
-		// position: absolute;
-		// top: -2.5rem;
-		// left: 0;
-		// z-index: 200;
-		margin-top: -2.5rem;
+		position: absolute;
+		top: -2.5rem;
+		left: 0;
+		z-index: 200;
+		// margin-top: -2.5rem;
 
 		@include respond-to('370') {
-			margin-top: -3rem;
+			top: -3rem;
 		}
 
 		@include respond-to('370') {
-			margin-top: -4rem;
+			// margin-top: -4rem;
 		}
 	}
 
 	.custom-logo {
 		width: 10.9375rem;  // 175px
-		// width: 12.5rem;
 
 		@include respond-to('370') {
 			width: 13.125rem;  // 210px
@@ -91,6 +104,10 @@
 
 		@include respond-to('1150') {
 			width: 14.0625rem;  // 225px
+		}
+
+		@include respond-to('1750') {
+			width: 15.625rem;  // 250px
 		}
 	}
 }

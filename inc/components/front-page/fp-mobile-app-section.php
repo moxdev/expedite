@@ -17,22 +17,9 @@ if ( ! function_exists( 'expedite_delivery_system_front_page_mobile_app_callout'
 
 			if ( $ma_title || $ma_sub_title ) :
 				$ma_button = $mobile_app_section['mobile_app_button'];
-				$ma_img    = $mobile_app_section['mobile_icon_image'];
 				?>
 				<section class="front-page-mobile-app">
-					<!-- <img class="top-curve" src="wp-content/themes/expedite_delivery_system/imgs/blue-curve-down-lg.svg" alt=""> -->
 					<div class="content-wrapper">
-						<?php
-						if ( $ma_img ) :
-							$ma_img_title = $ma_img['title'] ? $ma_img['title'] : $ma_img['alt'];
-							?>
-							<figure class="mobile-app-featured-image">
-								<img class="icon-mobile-app" src="<?php echo esc_url( $ma_img['sizes']['icon-mobile-app'] ); ?>" alt="<?php echo esc_attr( $ma_img['alt'] ); ?>" title="<?php echo esc_attr( $ma_img_title ); ?>"/>
-							</figure>
-							<?php
-						endif;
-
-						?>
 						<div class="mobile-app-content">
 							<?php
 							if ( $ma_title ) :

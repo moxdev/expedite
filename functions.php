@@ -52,7 +52,6 @@ if ( ! function_exists( 'expedite_delivery_system_setup' ) ) :
 
 		add_image_size( 'rapidshare', 1000, 9999, false );
 
-		add_image_size( 'icon-mobile-app', 236, 9999, false );
 		add_image_size( 'icon-industries', 380, 9999, false );
 		add_image_size( 'icon-global-callout', 600, 9999, false );
 
