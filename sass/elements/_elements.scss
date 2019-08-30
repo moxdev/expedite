@@ -39,7 +39,9 @@ figure {
 	color: #fff;
 	width: 100%;
 	height: 100%;
+	// min-height: 200px;
 	position: relative;
+	margin: 0;
 	z-index: 1;
 
 	&:before {
@@ -74,25 +76,7 @@ figure {
 
 	.feature-container {
 		position: relative;
-		// z-index: 200;
-
-		&:before {
-			content: '';
-			background-image: url('imgs/icon-free-consultation.svg');
-			width: 86px;
-			height: 100%;
-			position: absolute;
-			bottom: -1rem;
-			right: 1.5rem;
-			z-index: 200;
-			background-size: 100% auto;
-			background-position: 0 100%;
-			background-repeat: no-repeat;
-
-			@include respond-to('950') {
-				width: 150px;
-			}
-		}
+		z-index: 1;
 	}
 
 	figure {
@@ -113,17 +97,73 @@ figure {
 	}
 
 	figcaption {
+		width: 40em;
+		max-width: 100%;
+		@include margin-auto;
+		display: block;
 		position: relative;
-		z-index: 10;
-		font-size: 2rem;
+		z-index: 500;
+		@include font-size(2);
+		@include section-padding(4);
+		@include padding-left-right;
 		font-family: $font__black;
 		text-transform: uppercase;
 		text-align: right;
-		padding-top: 1.75em;
-		padding-bottom: 1.75em;
 		line-height: 1;
-		@include padding-left-right;
-		// @include test(red);
+
+		@include respond-to('450') {
+			@include section-padding(5);
+		}
+
+		@include respond-to('650') {
+			@include section-padding(6);
+		}
+
+		@include respond-to('750') {
+			@include section-padding(7);
+		}
+
+		@include respond-to('950') {
+			width: 29.09090909090909em;
+			@include font-size(2.75);
+			@include section-padding(8);
+		}
+
+		@include respond-to('1150') {
+			width: 21.333333333333332em;
+			@include font-size(3.75);
+			@include section-padding(9);
+		}
+
+		@include respond-to('1350') {
+			@include section-padding(10);
+		}
+
+		@include respond-to('1550') {
+			@include section-padding(11);
+		}
+
+		@include respond-to('1750') {
+			@include section-padding(12);
+		}
+
+		&:after {
+			content: '';
+			background-image: url('imgs/icon-free-consultation.svg');
+			width: 5.375rem;  // 86px
+			height: 100%;
+			position: absolute;
+			bottom: -1rem;
+			right: 1.5rem;
+			z-index: 500;
+			background-size: 100% auto;
+			background-position: 0 100%;
+			background-repeat: no-repeat;
+
+			@include respond-to('950') {
+				width: 9.375rem;  // 150px
+			}
+		}
 	}
 
 	img {

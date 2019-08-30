@@ -1,7 +1,49 @@
 #front-page-callout {
 
 	.content-wrapper {
-		// @include section-padding(4);
 		padding-bottom: 4rem;
+
+		@include respond-to('750') {
+				padding-top: 1rem;
+		}
+
+		@include respond-to('950') {
+				padding-top: 0;
+		}
+
+		@include respond-to('1150') {
+				margin-top: -1rem;
+		}
+
+		@include respond-to('1350') {
+				margin-top: -2rem;
+		}
+
+		@include respond-to('1550') {
+				margin-top: -3rem;
+		}
+
+		@include respond-to('1950') {
+				margin-top: -4rem;
+		}
+
+		@include respond-to('2100') {
+				margin-top: -5rem;
+		}
+
+		@include respond-to('2200') {
+				margin-top: -6rem;
+		}
+
+		@include respond-to('2400') {
+				margin-top: -7rem;
+		}
+
+		.btn {
+			&:hover {
+				background: $color__brand-1;
+				color: #fff;
+			}
+		}
 	}
 }
