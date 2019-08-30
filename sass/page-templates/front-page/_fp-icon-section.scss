@@ -48,6 +48,13 @@
 			justify-content: space-around;
 		}
 
+		.icon-card-inner-wrapper {
+
+			@include respond-to('1150') {
+				padding: 0 1rem;
+			}
+		}
+
 		.icon-card {
 			margin-bottom: 2.5rem;
 
@@ -88,7 +95,7 @@
 			}
 
 			@include respond-to('1150') {
-				padding: 0 1rem;
+				padding: 0;
 			}
 		}
 	}

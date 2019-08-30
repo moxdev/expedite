@@ -147,22 +147,16 @@ figure {
 			@include section-padding(12);
 		}
 
-		&:after {
-			content: '';
-			background-image: url('imgs/icon-free-consultation.svg');
-			width: 5.375rem;  // 86px
-			height: 100%;
-			position: absolute;
-			bottom: -1rem;
-			right: 1.5rem;
-			z-index: 500;
-			background-size: 100% auto;
-			background-position: 0 100%;
-			background-repeat: no-repeat;
+		@include respond-to('1950') {
+			@include section-padding(13);
+		}
 
-			@include respond-to('950') {
-				width: 9.375rem;  // 150px
-			}
+		@include respond-to('2200') {
+			@include section-padding(15);
+		}
+
+		@include respond-to('2400') {
+			@include section-padding(17);
 		}
 	}
 

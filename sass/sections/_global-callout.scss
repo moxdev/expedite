@@ -19,22 +19,73 @@
 
 	.content-wrapper {
 		position: relative;
+		max-width: 48.75em;  // 780px
+		@include section-padding(5,3);
+
+		@include respond-to('750') {
+			padding-top: 6.5rem;
+		}
+
+		@include respond-to('950') {
+			padding-top: 7.5rem;
+		}
+		@include respond-to('1150') {
+			padding-top: 8.5rem;
+		}
+		@include respond-to('1350') {
+			padding-top: 9.5rem;
+		}
+		@include respond-to('1750') {
+			padding-top: 10.5rem;
+		}
+		@include respond-to('2100') {
+			padding-top: 12rem;
+		}
+		@include respond-to('2400') {
+			padding-top: 14rem;
+		}
 
 		img {
 			position: absolute;
-			top: -30%;
+			top: -20%;
 			left: 50%;
 			transform: translate(-50%, 0);
-			width: 165px;
+			width: 175px;
 			z-index: 100;
 
+			@include respond-to('750') {
+				top: -10%;
+			}
+
 			@include respond-to('950') {
-				width: 230px
+				width: 230px;
+				top: -15%;
+			}
+			@include respond-to('1150') {
+				top: -10%;
+			}
+			@include respond-to('1350') {
+				top: -5%;
+			}
+			@include respond-to('1750') {
+				top: 0;
+			}
+			@include respond-to('2100') {
+				top: 5%;
+			}
+			@include respond-to('2400') {
+				top: 12%;
 			}
 		}
 	}
 
 	.btn {
 		background: $color__brand-2;
+
+		&:hover {
+			background: $color__brand-1;
+			color: #fff;
+			border: 1px solid $color__brand-2;
+		}
 	}
 }

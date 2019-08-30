@@ -1,0 +1,59 @@
+.page-template-page-contact {
+
+	.main-content-wrapper {
+		// @include test(blue);
+
+		@include respond-to('950') {
+			display: flex;
+			justify-content: space-between;
+			// align-items: baseline;
+		}
+
+		.hentry {
+			// @include test(red);
+
+			@include respond-to('950') {
+				padding-right: 1.5rem;
+				flex: 1 1 auto;
+			}
+		}
+
+		aside {
+			// @include test(purple);
+			@include section-padding(0,5);
+
+			@include respond-to('950') {
+				padding-left: 1.5rem;
+				flex: 1 1 auto;
+				// align-self: baseline;
+				@include section-padding(6.5,0);
+			}
+
+			h2 {
+				@extend h2.section-sub-title;
+				margin-bottom: .5rem;
+			}
+
+			a {
+				display: block;
+				font-family: $font__med;
+				color: $color__brand-3;
+				color: $color__text-main;
+				margin-bottom: 1.5rem;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			.contact-info-wrapper {
+				padding-top: 3rem;
+			}
+
+			.address-section {
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+}

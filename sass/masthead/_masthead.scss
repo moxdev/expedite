@@ -10,14 +10,14 @@
 		position: relative;
 		background: $color__brand-1;
 
-		@include respond-to('2200') {
-			// padding-bottom: .5rem;
-		}
-
 		.aux-container {
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
+
+			@include respond-to('1150') {
+				font-size: 1.25rem;
+			}
 		}
 
 		.aux-tel-svg {
@@ -39,25 +39,23 @@
 			text-decoration: none;
 			font-family: $font__light;
 
+			&:hover {
+				color: $color__brand-2;
+			}
+
 			@include respond-to('750') {
 				display: block;
 			}
-
 		}
 	}
 
 	.branding-desktop-nav-container {
 		background-color: #fff;
 		position: relative;
-
 		padding-bottom: 3rem;
 
 		@include respond-to('950') {
 			padding-bottom: 0;
-		}
-
-		@include respond-to('2200') {
-			// display: inline;
 		}
 	}
 
@@ -70,10 +68,6 @@
 	.site-branding {
 		position: relative;
 
-		@include respond-to('750') {
-			// padding-left: 2.5rem;
-		}
-
 		@include respond-to('950') {
 			padding-top: 1rem;
 		}
@@ -84,14 +78,9 @@
 		top: -2.5rem;
 		left: 0;
 		z-index: 200;
-		// margin-top: -2.5rem;
 
 		@include respond-to('370') {
 			top: -3rem;
-		}
-
-		@include respond-to('370') {
-			// margin-top: -4rem;
 		}
 	}
 

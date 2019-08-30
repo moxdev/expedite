@@ -12,7 +12,7 @@
 @import "primary/comments";
 
 #page {
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 #primary {
@@ -51,6 +51,49 @@
 
   @include respond-to('2200') {
     margin-top: -4rem;
+  }
+
+  &:after {
+    content: '';
+    background-image: url('imgs/icon-free-consultation.svg');
+    // width: 5.375rem;  // 86px
+    width: 6.25rem;  // 100px
+    height: 100%;
+    position: absolute;
+    top: -3.5rem;
+    right: 20px;
+    z-index: 500;
+    background-size: 100% auto;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    @include respond-to('750') {
+      top: -5rem;
+      right: 40px;
+      width: 7.5rem;  // 120px
+    }
+
+    @include respond-to('950') {
+      top: -6rem;
+      width: 9.6875rem;  // 155px
+    }
+
+    @include respond-to('1150') {
+      right: 0;
+    }
+
+    @include respond-to('1280') {
+      right: -60px;
+    }
+
+    @include respond-to('1350') {
+      top: -7rem;
+    }
+
+    @include respond-to('1550') {
+      top: -8rem;
+      right: -140px;
+    }
   }
 }
 

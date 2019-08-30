@@ -36,6 +36,7 @@
 		position: relative;
 		z-index: 10;
 		color: #fff;
+		@include section-padding(3);
 	}
 
 	h2.section-title {
@@ -69,24 +70,61 @@
 		}
 
 		.flickity-prev-next-button {
+			position: static;
 			top: auto;
 			bottom: 0;
 			padding: 1.25rem 1.5rem;
-
 			transform: translateY(0);
 			border-radius: 5px;
+			width: 52px;
+			height: 52px;
 			background: transparent;
 			border: 1px solid $color__border-button-alt;
 			color: $color__border-button-alt;
 
+			@include respond-to('1350') {
+				position: absolute;
+				top: 25%;
+				transform: translateY(-50%);
+			}
+
+			&.previous,
+			&.next {
+				&:hover {
+					background: $color__brand-2;
+					border: 1px solid #fff;
+
+					svg {
+						fill: #333;
+						fill: $color__brand-1;
+					}
+				}
+			}
+
 			&.previous {
-				left: 20%;
-				// transform: translate(-50%, 0);
+				margin-right: .5rem;
+
+				@include respond-to('1350') {
+					left: -5rem;
+					margin-right: 0;
+				}
+
+				@include respond-to('1550') {
+					left: -7rem;
+				}
 			}
 
 			&.next {
-				right: 20%;
-				// transform: translate(-50%, 0);
+				margin-left: .5rem;
+
+				@include respond-to('1350') {
+					right: -5rem;
+					margin-left: 0;
+				}
+
+				@include respond-to('1550') {
+					right: -7rem;
+				}
 			}
 		}
 	}

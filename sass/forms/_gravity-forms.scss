@@ -1,0 +1,81 @@
+.gform_wrapper .top_label .gfield_label,
+.gform_wrapper legend.gfield_label {
+	font-size: 1.0625rem !important;
+	color: inherit !important;
+	font-weight: normal !important;
+}
+
+.gform_wrapper .top_label div.ginput_container {
+	margin-top: 5px !important;
+}
+
+.gform_wrapper .gfield_required {
+	color: $color__brand-3 !important;
+}
+
+.gform_wrapper .gform_body .gform_fields .gfield input,
+.gform_wrapper .gform_body .gform_fields .gfield textarea {
+	width: 100% !important;
+	border-color: $color__brand-1 !important;
+	border-radius: 0 !important;
+	padding-left: 0 !important;
+}
+
+// .gform_wrapper .ginput_container {
+// 	margin-bottom: 12rem;
+// 	@include test(red);
+
+// 	&:last-of-type {
+// 		margin-bottom: 1rem;
+// 	}
+// }
+
+.gform_wrapper ul li.gfield {
+	padding: 0 !important;
+	margin-bottom: 1.5rem !important;
+}
+
+.gform_wrapper .gform_footer {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.gform_footer .gform_button {
+	position: relative !important;
+	background: $color__brand-2;
+	margin-bottom: 1.5rem;
+
+	&:after {
+		content: '\00BB' !important;
+		position: absolute !important;
+		font-size: 1.6em !important;
+		margin-left: 6px !important;
+		line-height: .5 !important;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		// background: $color__background-button-hover !important;
+	}
+
+	&:hover,
+	&:active {
+		cursor: pointer;
+	}
+
+	&:focus {
+		outline: 0;
+	}
+
+	&:disabled {
+		opacity: 0.4;
+		transition: opacity 0.25s;
+
+		&:hover,
+		&:focus {
+			background: none;
+			cursor: auto;
+		}
+	}
+}

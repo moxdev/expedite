@@ -31,16 +31,8 @@
 		height: 63.184498736310026vh; // 750px
 	}
 
-	@include respond-to('2100') {
-		// height: 67.39679865206402vh; // 800px
-	}
-
 	@include respond-to('2200') {
 		margin-top: -1rem;
-	}
-
-	@include respond-to('2400') {
-		// height: 71.60909856781802vh; // 850px
 	}
 
 	&:before {
@@ -72,12 +64,6 @@
 		right: 0;
 		z-index: 10;
 	}
-
-
-
-	// @include respond-to('1150') {
-	// 	height: 53.125rem; // 850px
-	// }
 
 	// @media (max-height: 669px) and (min-width: 1150px) {
 	// 	height: 60vh;
